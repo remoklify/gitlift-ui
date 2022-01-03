@@ -13,7 +13,6 @@ export class UserPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      console.log("Params: ", params);
       if (!params.username) {
         //this.router.navigate( [ URLS.notFound ] );
         return;

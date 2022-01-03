@@ -1,3 +1,40 @@
-<div>
-  {{ user.name }}
+<div class="github-user">
+  <div class="profile-image">
+    <img [src]="user.avatar" />
+  </div>
+
+  <div class="basic-info">
+    <p class="info"><fa-icon [icon]="faUserTie"></fa-icon>{{ user.name }}</p>
+    <p class="info">
+      <fa-icon [icon]="faBuilding"></fa-icon>{{ user.company }}
+    </p>
+    <p class="info"><fa-icon [icon]="faEnvelope"></fa-icon>{{ user.email }}</p>
+  </div>
+
+  <div class="conditional-info">
+    <p class="info">
+      <span class="title">Developer Program Member: </span
+      >{{ user.isDeveloperProgramMember }}
+    </p>
+    <p class="info">
+      <span class="title">Github Star: </span>{{ user.isGithubStar }}
+    </p>
+    <p class="info">
+      <span class="title">Hireable: </span>{{ user.isHireable }}
+    </p>
+  </div>
+
+  <div class="primary-languages">
+    <p class="title">Primary Languages</p>
+    <ng-container *ngFor="let language of user.primaryLanguages">
+      <p class="language">{{ language }}</p>
+    </ng-container>
+  </div>
+
+  <div class="languages">
+    <p class="title">Experienced Languages</p>
+    <ng-container *ngFor="let language of user.languages">
+      <p class="language">{{ language }}</p>
+    </ng-container>
+  </div>
 </div>
