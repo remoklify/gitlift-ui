@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  api: {
+    business_logic: { uri: 'https://gitlift-business-logic.herokuapp.com' },
+  },
 };
