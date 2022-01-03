@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
 
@@ -8,16 +8,22 @@ import { GithubService } from 'src/app/service/github/github.service';
   styleUrls: ['./github-user-card.component.scss'],
 })
 export class GithubUserCardComponent implements OnInit {
+  @Input() username: string = '';
   public user: GithubUser = {} as GithubUser;
 
   constructor(private githubService: GithubService) {}
 
   ngOnInit(): void {
-    this.githubService.getGithubUserWithUsername('fatihturker').then((data) => {
-      data.subscribe((githubUser) => {
-        console.log(githubUser);
-        this.user = githubUser;
-      });
-    });
+    console.log("Username: ", this.username);
+    if (this.username && this.username.length > 0) {
+      this.githubService
+        .getGithubUserWithUsername(this.username)
+        .then((data) => {
+          data.subscribe((githubUser) => {
+            console.log(githubUser);
+            this.user = githubUser;
+          });
+        });
+    }
   }
 }

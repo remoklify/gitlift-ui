@@ -5,9 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubUserCardComponent } from './component/github-user-card/github-user-card.component';
+import { UserPageComponent } from './page/user-page/user-page/user-page.component';
+import { SearchPageComponent } from './page/search-page/search-page/search-page.component';
 
 @NgModule({
-  declarations: [AppComponent, GithubUserCardComponent],
+  declarations: [AppComponent, GithubUserCardComponent, UserPageComponent, SearchPageComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

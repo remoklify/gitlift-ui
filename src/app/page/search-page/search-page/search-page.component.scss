@@ -1,0 +1,23 @@
+.search-page {
+  margin-top: 60px;
+
+  .product-name {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .search-box {
+    width: 36vw;
+    border-radius: 15px;
+    border: 0.5px solid #212121;
+    height: 30px;
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .search-page {
+    .search-box {
+      width: 76vw;
+    }
+  }
+}
