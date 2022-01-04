@@ -10,7 +10,11 @@
           <span>{{ user.name }}</span>
         </p>
       </div>
-      
+
+      <div class="bio">
+        <p>{{ user.bio }}</p>
+      </div>
+
       <div class="body">
         <p class="info">
           <fa-icon [icon]="faBuilding" class="fa-lg"></fa-icon
@@ -50,18 +54,19 @@
       </div>
     </div>
   </div>
+  <div class="right">
+    <div class="primary-languages">
+      <p class="title">Primary Languages</p>
+      <ng-container *ngFor="let language of user.primaryLanguages">
+        <p class="language">{{ language }}</p>
+      </ng-container>
+    </div>
 
-  <div class="primary-languages">
-    <p class="title">Primary Languages</p>
-    <ng-container *ngFor="let language of user.primaryLanguages">
-      <p class="language">{{ language }}</p>
-    </ng-container>
-  </div>
-
-  <div class="languages">
-    <p class="title">Experienced Languages</p>
-    <ng-container *ngFor="let language of user.languages">
-      <p class="language">{{ language }}</p>
-    </ng-container>
+    <div class="languages">
+      <p class="title">Experienced Languages</p>
+      <ng-container *ngFor="let language of user.languages">
+        <p class="language">{{ language }}</p>
+      </ng-container>
+    </div>
   </div>
 </div>
