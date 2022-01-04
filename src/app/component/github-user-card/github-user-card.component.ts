@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faBuilding, faEnvelope, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding, faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
 
@@ -12,9 +13,10 @@ export class GithubUserCardComponent implements OnInit {
   @Input() username: string = '';
   public user: GithubUser = {} as GithubUser;
 
-  faUserTie = faUserTie;
   faBuilding = faBuilding;
-  faEnvelope = faEnvelope
+  faEnvelope = faEnvelope;
+  faCheck = faCheck;
+  faTimes = faTimes;
 
   constructor(private githubService: GithubService) {}
 

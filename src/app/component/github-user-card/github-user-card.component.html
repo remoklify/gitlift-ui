@@ -1,27 +1,54 @@
 <div class="github-user">
-  <div class="profile-image">
-    <img [src]="user.avatar" />
-  </div>
+  <div class="left">
+    <div class="profile-image">
+      <img [src]="user.avatar" />
+    </div>
 
-  <div class="basic-info">
-    <p class="info"><fa-icon [icon]="faUserTie"></fa-icon>{{ user.name }}</p>
-    <p class="info">
-      <fa-icon [icon]="faBuilding"></fa-icon>{{ user.company }}
-    </p>
-    <p class="info"><fa-icon [icon]="faEnvelope"></fa-icon>{{ user.email }}</p>
-  </div>
+    <div class="basic-info">
+      <div class="head">
+        <p class="info">
+          <span>{{ user.name }}</span>
+        </p>
+      </div>
+      
+      <div class="body">
+        <p class="info">
+          <fa-icon [icon]="faBuilding" class="fa-lg"></fa-icon
+          ><span>{{ user.company }}</span>
+        </p>
+        <p class="info">
+          <fa-icon [icon]="faEnvelope" class="fa-lg"></fa-icon
+          ><span>{{ user.email }}</span>
+        </p>
+      </div>
 
-  <div class="conditional-info">
-    <p class="info">
-      <span class="title">Developer Program Member: </span
-      >{{ user.isDeveloperProgramMember }}
-    </p>
-    <p class="info">
-      <span class="title">Github Star: </span>{{ user.isGithubStar }}
-    </p>
-    <p class="info">
-      <span class="title">Hireable: </span>{{ user.isHireable }}
-    </p>
+      <div class="conditional-info">
+        <p class="info">
+          <span class="title">Developer Program Member</span>
+          <fa-icon
+            [icon]="user.isDeveloperProgramMember ? faCheck : faTimes"
+            class="fa-lg"
+            [class]="user.isDeveloperProgramMember ? 'positive' : 'negative'"
+          ></fa-icon>
+        </p>
+        <p class="info">
+          <span class="title">Github Star</span
+          ><fa-icon
+            [icon]="user.isGithubStar ? faCheck : faTimes"
+            class="fa-lg"
+            [class]="user.isGithubStar ? 'positive' : 'negative'"
+          ></fa-icon>
+        </p>
+        <p class="info">
+          <span class="title">Hireable</span
+          ><fa-icon
+            [icon]="user.isHireable ? faCheck : faTimes"
+            class="fa-lg"
+            [class]="user.isHireable ? 'positive' : 'negative'"
+          ></fa-icon>
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="primary-languages">
