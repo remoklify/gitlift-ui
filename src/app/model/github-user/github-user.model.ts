@@ -3,11 +3,14 @@
  */
 
 export interface GithubUser {
-  name: string;
-  avatar: string;
-  bio: string;
-  company: string;
+  login: string;
+  name?: string;
+  avatarUrl: string;
+  bio?: string;
+  company?: string;
+  location?: string;
   email: string;
+  websiteUrl?: string;
   isDeveloperProgramMember: boolean;
   isGithubStar: boolean;
   isHireable: boolean;
