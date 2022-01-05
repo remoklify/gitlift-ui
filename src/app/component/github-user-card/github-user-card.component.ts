@@ -27,6 +27,7 @@ export class GithubUserCardComponent implements OnInit {
         .then((data) => {
           data.subscribe((githubUser) => {
             this.user = githubUser;
+            this.user.languages = githubUser.languages.filter((l: string) => githubUser.primaryLanguages.indexOf(l) === -1);
           });
         });
     }

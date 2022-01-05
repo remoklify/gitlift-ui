@@ -55,18 +55,28 @@
     </div>
   </div>
   <div class="right">
-    <div class="primary-languages">
-      <p class="title">Primary Languages</p>
-      <ng-container *ngFor="let language of user.primaryLanguages">
-        <p class="language">{{ language }}</p>
-      </ng-container>
+    <div class="head">
+      <p class="title">Contributions</p>
+      <span class="description">
+        This information is prepared according to last year activity.
+      </span>
+      <p class="total-contribution">
+        Total Contributions: <span>{{ user.totalContributionsCount }}</span>
+      </p>
     </div>
 
-    <div class="languages">
-      <p class="title">Experienced Languages</p>
-      <ng-container *ngFor="let language of user.languages">
-        <p class="language">{{ language }}</p>
-      </ng-container>
+    <div class="body">
+      <div class="primary-languages">
+        <p class="title">Primary languages</p>
+        <app-language-card
+          [languages]="user.primaryLanguages"
+        ></app-language-card>
+      </div>
+
+      <div class="languages">
+        <p class="title">Also experienced in</p>
+        <app-language-card [languages]="user.languages"></app-language-card>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,15 @@
+.language-container {
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  .language {
+    padding: 13px;
+    border-bottom-right-radius: 20px;
+    margin-left: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: #757575;
+    background-color: #eeeeee;
+  }
+}
