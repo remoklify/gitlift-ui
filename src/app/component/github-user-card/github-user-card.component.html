@@ -1,20 +1,10 @@
 <div class="github-user">
   <div class="left">
-    <div class="profile-image">
-      <img [src]="user.coreInformation.avatarUrl" />
-    </div>
+    <app-core-information-card
+      [info]="user.coreInformation"
+    ></app-core-information-card>
 
     <div class="basic-info">
-      <div class="head">
-        <p class="info">
-          <span>{{ user.coreInformation.name }}</span>
-        </p>
-      </div>
-
-      <div class="bio">
-        <p>{{ user.coreInformation.bio }}</p>
-      </div>
-
       <app-personal-information-card
         [info]="user.personalInformation"
       ></app-personal-information-card>
@@ -23,9 +13,15 @@
         <p class="info">
           <span class="title">Developer Program Member</span>
           <fa-icon
-            [icon]="user.achievement.isDeveloperProgramMember ? faCheck : faTimes"
+            [icon]="
+              user.achievement.isDeveloperProgramMember ? faCheck : faTimes
+            "
             class="fa-lg"
-            [class]="user.achievement.isDeveloperProgramMember ? 'positive' : 'negative'"
+            [class]="
+              user.achievement.isDeveloperProgramMember
+                ? 'positive'
+                : 'negative'
+            "
           ></fa-icon>
         </p>
         <p class="info">
@@ -54,7 +50,8 @@
         This information is prepared according to last year activity.
       </span>
       <p class="total-contribution">
-        Total Contributions: <span>{{ user.contribution.totalContributionsCount }}</span>
+        Total Contributions:
+        <span>{{ user.contribution.totalContributionsCount }}</span>
       </p>
     </div>
 
@@ -68,7 +65,9 @@
 
       <div class="languages">
         <p class="title">Also experienced in</p>
-        <app-language-card [languages]="user.contribution.languages"></app-language-card>
+        <app-language-card
+          [languages]="user.contribution.languages"
+        ></app-language-card>
       </div>
     </div>
   </div>

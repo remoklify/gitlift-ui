@@ -1,0 +1,29 @@
+.core-information {
+  .profile-image {
+    img {
+      width: 160px;
+      height: 160px;
+      border-bottom-right-radius: 80px;
+    }
+  }
+
+  .info {
+    margin-top: 10px;
+    text-align: left;
+    .name {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .login {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .bio {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}

@@ -6,31 +6,13 @@
     margin-left: 120px;
     display: flex;
     flex-direction: column;
-    .profile-image {
-      img {
-        width: 160px;
-        height: 160px;
-        border-bottom-right-radius: 80px;
-      }
-    }
+
 
     .basic-info {
       text-align: left;
       margin-top: 20px;
       margin-left: 45px;
-      .head {
-        .info {
-          span {
-            font-size: 24px;
-            font-weight: 600;
-          }
-        }
-      }
-
-      .bio {
-        margin-top: 10px;
-      }
-
+      
       .conditional-info {
         margin-top: 30px;
         .info {
