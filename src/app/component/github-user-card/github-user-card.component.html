@@ -1,54 +1,47 @@
 <div class="github-user">
   <div class="left">
     <div class="profile-image">
-      <img [src]="user.avatarUrl" />
+      <img [src]="user.coreInformation.avatarUrl" />
     </div>
 
     <div class="basic-info">
       <div class="head">
         <p class="info">
-          <span>{{ user.name }}</span>
+          <span>{{ user.coreInformation.name }}</span>
         </p>
       </div>
 
       <div class="bio">
-        <p>{{ user.bio }}</p>
+        <p>{{ user.coreInformation.bio }}</p>
       </div>
 
-      <div class="body">
-        <p class="info">
-          <fa-icon [icon]="faBuilding" class="fa-lg"></fa-icon
-          ><span>{{ user.company }}</span>
-        </p>
-        <p class="info">
-          <fa-icon [icon]="faEnvelope" class="fa-lg"></fa-icon
-          ><span>{{ user.email }}</span>
-        </p>
-      </div>
+      <app-personal-information-card
+        [info]="user.personalInformation"
+      ></app-personal-information-card>
 
       <div class="conditional-info">
         <p class="info">
           <span class="title">Developer Program Member</span>
           <fa-icon
-            [icon]="user.isDeveloperProgramMember ? faCheck : faTimes"
+            [icon]="user.achievement.isDeveloperProgramMember ? faCheck : faTimes"
             class="fa-lg"
-            [class]="user.isDeveloperProgramMember ? 'positive' : 'negative'"
+            [class]="user.achievement.isDeveloperProgramMember ? 'positive' : 'negative'"
           ></fa-icon>
         </p>
         <p class="info">
           <span class="title">Github Star</span
           ><fa-icon
-            [icon]="user.isGithubStar ? faCheck : faTimes"
+            [icon]="user.achievement.isGithubStar ? faCheck : faTimes"
             class="fa-lg"
-            [class]="user.isGithubStar ? 'positive' : 'negative'"
+            [class]="user.achievement.isGithubStar ? 'positive' : 'negative'"
           ></fa-icon>
         </p>
         <p class="info">
           <span class="title">Hireable</span
           ><fa-icon
-            [icon]="user.isHireable ? faCheck : faTimes"
+            [icon]="user.achievement.isHireable ? faCheck : faTimes"
             class="fa-lg"
-            [class]="user.isHireable ? 'positive' : 'negative'"
+            [class]="user.achievement.isHireable ? 'positive' : 'negative'"
           ></fa-icon>
         </p>
       </div>
@@ -61,7 +54,7 @@
         This information is prepared according to last year activity.
       </span>
       <p class="total-contribution">
-        Total Contributions: <span>{{ user.totalContributionsCount }}</span>
+        Total Contributions: <span>{{ user.contribution.totalContributionsCount }}</span>
       </p>
     </div>
 
@@ -69,13 +62,13 @@
       <div class="primary-languages">
         <p class="title">Primary languages</p>
         <app-language-card
-          [languages]="user.primaryLanguages"
+          [languages]="user.contribution.primaryLanguages"
         ></app-language-card>
       </div>
 
       <div class="languages">
         <p class="title">Also experienced in</p>
-        <app-language-card [languages]="user.languages"></app-language-card>
+        <app-language-card [languages]="user.contribution.languages"></app-language-card>
       </div>
     </div>
   </div>

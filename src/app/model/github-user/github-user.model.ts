@@ -2,20 +2,14 @@
  * @description holds github user interface
  */
 
+import { Achievement } from '../achievement/achievement.model';
+import { Contribution } from '../contribution/contribution.model';
+import { CoreInformation } from '../core-information/core-information.model';
+import { PersonalInformation } from '../personal-information/personal-information.model';
+
 export interface GithubUser {
-  login: string;
-  name?: string;
-  avatarUrl: string;
-  bio?: string;
-  company?: string;
-  location?: string;
-  email: string;
-  websiteUrl?: string;
-  isDeveloperProgramMember: boolean;
-  isGithubStar: boolean;
-  isHireable: boolean;
-  totalContributionsCount: number;
-  lastWeekEvents: any;
-  languages: string[];
-  primaryLanguages: string[];
+  coreInformation: CoreInformation;
+  personalInformation: PersonalInformation;
+  achievement: Achievement;
+  contribution: Contribution;
 }

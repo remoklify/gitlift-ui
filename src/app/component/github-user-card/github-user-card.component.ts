@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faBuilding, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
@@ -13,8 +12,6 @@ export class GithubUserCardComponent implements OnInit {
   @Input() username: string = '';
   public user: GithubUser = {} as GithubUser;
 
-  faBuilding = faBuilding;
-  faEnvelope = faEnvelope;
   faCheck = faCheck;
   faTimes = faTimes;
 
@@ -27,7 +24,11 @@ export class GithubUserCardComponent implements OnInit {
         .then((data) => {
           data.subscribe((githubUser) => {
             this.user = githubUser;
-            this.user.languages = githubUser.languages.filter((l: string) => githubUser.primaryLanguages.indexOf(l) === -1);
+            this.user.contribution.languages =
+              githubUser.contribution.languages.filter(
+                (l: string) =>
+                  githubUser.contribution.primaryLanguages.indexOf(l) === -1
+              );
           });
         });
     }

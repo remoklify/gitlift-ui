@@ -9,9 +9,10 @@ import { UserPageComponent } from './page/user-page/user-page/user-page.componen
 import { SearchPageComponent } from './page/search-page/search-page/search-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LanguageCardComponent } from './component/language-card/language-card.component';
+import { PersonalInformationCardComponent } from './component/personal-information-card/personal-information-card.component';
 
 @NgModule({
-  declarations: [AppComponent, GithubUserCardComponent, UserPageComponent, SearchPageComponent, LanguageCardComponent],
+  declarations: [AppComponent, GithubUserCardComponent, UserPageComponent, SearchPageComponent, LanguageCardComponent, PersonalInformationCardComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
