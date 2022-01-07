@@ -22,6 +22,19 @@
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .github-user {
+    .right {
+      margin-left: 122px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .github-user {
+    margin-left: -150px;
   }
 }
