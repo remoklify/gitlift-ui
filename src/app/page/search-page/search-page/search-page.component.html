@@ -1,4 +1,5 @@
 <div class="search-page">
   <p class="product-name">Gitlift</p>
-  <input class="search-box" />
+  <fa-icon [icon]="faSearch" class="fa-sm search-icon"></fa-icon
+  ><input type="search" class="search-box" placeholder="Type github username: e.g fatihturker" (keydown.enter)="search($event)" />
 </div>

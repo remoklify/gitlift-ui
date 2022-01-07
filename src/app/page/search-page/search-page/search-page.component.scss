@@ -2,15 +2,25 @@
   margin-top: 60px;
 
   .product-name {
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 600;
+    color: #f57f17;
   }
 
   .search-box {
     width: 36vw;
     border-radius: 15px;
-    border: 0.5px solid #212121;
+    border: 2px solid #f57f17;
     height: 30px;
+    padding-left: 36px;
+    padding-bottom: 1px;
+  }
+
+  .search-icon {
+    color: #f57f17;
+    position: absolute;
+    margin-left: 16px;
+    margin-top: 9px;
   }
 }
 
