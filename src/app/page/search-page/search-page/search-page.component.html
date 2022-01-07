@@ -1,5 +1,12 @@
 <div class="search-page">
-  <p class="product-name">Gitlift</p>
-  <fa-icon [icon]="faSearch" class="fa-sm search-icon"></fa-icon
-  ><input type="search" class="search-box" placeholder="Type github username: e.g fatihturker" (keydown.enter)="search($event)" />
+  <img class="brand-logo" src="./assets/brand-logo.png" />
+  <div class="search-container">
+    <fa-icon [icon]="faSearch" class="fa-lg search-icon"></fa-icon
+    ><input
+      type="search"
+      class="search-box"
+      placeholder="Type Github username: e.g fatihturker"
+      (keydown.enter)="search($event)"
+    />
+  </div>
 </div>
