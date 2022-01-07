@@ -1,18 +1,20 @@
 <div class="personal-information-card">
-  <p class="info">
+  <p class="info" *ngIf="info.company">
     <fa-icon [icon]="faBuilding" class="fa-lg"></fa-icon
-    ><span>{{ info.company }}</span>
+    ><span class="content">{{ info.company }}</span>
   </p>
-  <p class="info">
+  <p class="info" *ngIf="info.location">
     <fa-icon [icon]="faMapMarkerAlt" class="fa-lg"></fa-icon
-    ><span>{{ info.location }}</span>
+    ><span class="content">{{ info.location }}</span>
   </p>
-  <p class="info">
+  <p class="info" *ngIf="info.email">
     <fa-icon [icon]="faEnvelope" class="fa-lg"></fa-icon
-    ><span>{{ info.email }}</span>
+    ><a class="content" [href]="'mailto:' + info.email">{{ info.email }}</a>
   </p>
-  <p class="info">
+  <p class="info" *ngIf="info.websiteUrl">
     <fa-icon [icon]="faLink" class="fa-lg"></fa-icon
-    ><span>{{ info.websiteUrl }}</span>
+    ><a class="content" [href]="info.websiteUrl" target="_blank">{{
+      info.websiteUrl
+    }}</a>
   </p>
 </div>

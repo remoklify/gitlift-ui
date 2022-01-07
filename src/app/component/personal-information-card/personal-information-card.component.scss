@@ -1,13 +1,25 @@
 .personal-information-card {
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  text-align: left;
+  padding: 10px;
+  border-top: 1px solid #eeeeee;
+  border-top-right-radius: 15px;
   .info {
-    fa-icon {
-      color: #57606a;
-    }
-    span {
+    display: flex;
+    flex-direction: row;
+
+    .content {
+      word-break: break-all;
       margin-left: 10px;
-      font-size: 17px;
-      font-weight: 500;
+      font-size: 16px;
+      padding-top: 2px;
+      font-weight: 400;
+    }
+
+    a {
+      color: #F57F17;
     }
   }
 }

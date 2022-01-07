@@ -1,5 +1,6 @@
 .github-user {
   width: 94vw;
+  color: #d2cece;
   .left {
     max-width: 300px;
     float: left;
@@ -8,10 +9,6 @@
     flex-direction: column;
 
     .basic-info {
-      text-align: left;
-      margin-top: 20px;
-      margin-left: 45px;
-
       .conditional-info {
         margin-top: 30px;
       }
@@ -25,32 +22,6 @@
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    .head {
-      .title {
-        font-size: 24px;
-        font-weight: 600;
-      }
-      .total-contribution {
-        span {
-          font-weight: 600;
-        }
-      }
-    }
-
-    .body {
-      .primary-languages {
-        .title {
-          font-size: 20px;
-          font-weight: 600;
-        }
-      }
-
-      .languages {
-        .title {
-          font-size: 20px;
-          font-weight: 600;
-        }
-      }
-    }
+    
   }
 }

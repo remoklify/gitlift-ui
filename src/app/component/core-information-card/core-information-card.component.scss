@@ -1,4 +1,10 @@
 .core-information {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  padding: 10px;
+  border-top: 1px solid #eeeeee;
+  border-top-right-radius: 15px;
   .profile-image {
     img {
       width: 160px;
