@@ -1,0 +1,29 @@
+.contribution-card {
+  .head {
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .total-contribution {
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .body {
+    .primary-languages {
+      .title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    .languages {
+      .title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+}

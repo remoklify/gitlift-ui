@@ -10,9 +10,12 @@ import { SearchPageComponent } from './page/search-page/search-page/search-page.
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LanguageCardComponent } from './component/language-card/language-card.component';
 import { PersonalInformationCardComponent } from './component/personal-information-card/personal-information-card.component';
+import { CoreInformationCardComponent } from './component/core-information-card/core-information-card.component';
+import { AchievementCardComponent } from './component/achievement-card/achievement-card.component';
+import { ContributionCardComponent } from './component/contribution-card/contribution-card.component';
 
 @NgModule({
-  declarations: [AppComponent, GithubUserCardComponent, UserPageComponent, SearchPageComponent, LanguageCardComponent, PersonalInformationCardComponent],
+  declarations: [AppComponent, GithubUserCardComponent, UserPageComponent, SearchPageComponent, LanguageCardComponent, PersonalInformationCardComponent, CoreInformationCardComponent, AchievementCardComponent, ContributionCardComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],

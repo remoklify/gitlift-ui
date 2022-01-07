@@ -1,0 +1,26 @@
+<div class="achievement-card">
+  <p class="achievement">
+    <span class="title">Developer Program Member</span>
+    <fa-icon
+      [icon]="achievement.isDeveloperProgramMember ? faCheck : faTimes"
+      class="fa-lg"
+      [class]="achievement.isDeveloperProgramMember ? 'positive' : 'negative'"
+    ></fa-icon>
+  </p>
+  <p class="achievement">
+    <span class="title">Github Star</span
+    ><fa-icon
+      [icon]="achievement.isGithubStar ? faCheck : faTimes"
+      class="fa-lg"
+      [class]="achievement.isGithubStar ? 'positive' : 'negative'"
+    ></fa-icon>
+  </p>
+  <p class="achievement">
+    <span class="title">Hireable</span
+    ><fa-icon
+      [icon]="achievement.isHireable ? faCheck : faTimes"
+      class="fa-lg"
+      [class]="achievement.isHireable ? 'positive' : 'negative'"
+    ></fa-icon>
+  </p>
+</div>

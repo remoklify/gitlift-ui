@@ -1,0 +1,28 @@
+<div class="contribution-card">
+  <div class="head">
+    <p class="title">Contributions</p>
+    <span class="description">
+      This information is prepared according to last year activity.
+    </span>
+    <p class="total-contribution">
+      Total Contributions:
+      <span>{{ contribution.totalContributionsCount }}</span>
+    </p>
+  </div>
+
+  <div class="body">
+    <div class="primary-languages">
+      <p class="title">Primary languages</p>
+      <app-language-card
+        [languages]="contribution.primaryLanguages"
+      ></app-language-card>
+    </div>
+
+    <div class="languages">
+      <p class="title">Also experienced in</p>
+      <app-language-card
+        [languages]="contribution.languages"
+      ></app-language-card>
+    </div>
+  </div>
+</div>

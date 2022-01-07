@@ -10,65 +10,15 @@
       ></app-personal-information-card>
 
       <div class="conditional-info">
-        <p class="info">
-          <span class="title">Developer Program Member</span>
-          <fa-icon
-            [icon]="
-              user.achievement.isDeveloperProgramMember ? faCheck : faTimes
-            "
-            class="fa-lg"
-            [class]="
-              user.achievement.isDeveloperProgramMember
-                ? 'positive'
-                : 'negative'
-            "
-          ></fa-icon>
-        </p>
-        <p class="info">
-          <span class="title">Github Star</span
-          ><fa-icon
-            [icon]="user.achievement.isGithubStar ? faCheck : faTimes"
-            class="fa-lg"
-            [class]="user.achievement.isGithubStar ? 'positive' : 'negative'"
-          ></fa-icon>
-        </p>
-        <p class="info">
-          <span class="title">Hireable</span
-          ><fa-icon
-            [icon]="user.achievement.isHireable ? faCheck : faTimes"
-            class="fa-lg"
-            [class]="user.achievement.isHireable ? 'positive' : 'negative'"
-          ></fa-icon>
-        </p>
+        <app-achievement-card
+          [achievement]="user.achievement"
+        ></app-achievement-card>
       </div>
     </div>
   </div>
   <div class="right">
-    <div class="head">
-      <p class="title">Contributions</p>
-      <span class="description">
-        This information is prepared according to last year activity.
-      </span>
-      <p class="total-contribution">
-        Total Contributions:
-        <span>{{ user.contribution.totalContributionsCount }}</span>
-      </p>
-    </div>
-
-    <div class="body">
-      <div class="primary-languages">
-        <p class="title">Primary languages</p>
-        <app-language-card
-          [languages]="user.contribution.primaryLanguages"
-        ></app-language-card>
-      </div>
-
-      <div class="languages">
-        <p class="title">Also experienced in</p>
-        <app-language-card
-          [languages]="user.contribution.languages"
-        ></app-language-card>
-      </div>
-    </div>
+    <app-contribution-card
+      [contribution]="user.contribution"
+    ></app-contribution-card>
   </div>
 </div>

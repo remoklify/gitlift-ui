@@ -7,32 +7,13 @@
     display: flex;
     flex-direction: column;
 
-
     .basic-info {
       text-align: left;
       margin-top: 20px;
       margin-left: 45px;
-      
+
       .conditional-info {
         margin-top: 30px;
-        .info {
-          span {
-            font-size: 14px;
-            font-weight: 600;
-          }
-
-          fa-icon {
-            margin-left: 10px;
-          }
-
-          .positive {
-            color: #388e3c;
-          }
-
-          .negative {
-            color: #d32f2f;
-          }
-        }
       }
     }
   }

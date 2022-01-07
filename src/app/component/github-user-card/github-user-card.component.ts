@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
 
@@ -11,9 +10,6 @@ import { GithubService } from 'src/app/service/github/github.service';
 export class GithubUserCardComponent implements OnInit {
   @Input() username: string = '';
   public user: GithubUser = {} as GithubUser;
-
-  faCheck = faCheck;
-  faTimes = faTimes;
 
   constructor(private githubService: GithubService) {}
 
