@@ -1,12 +1,15 @@
+@import "../../styles/common/common.scss";
+
 .github-user {
   width: 94vw;
   color: #d2cece;
+
   .left {
+    @include layout-flex-column();
+
     max-width: 300px;
     float: left;
     margin-left: 120px;
-    display: flex;
-    flex-direction: column;
 
     .basic-info {
       .conditional-info {
@@ -16,12 +19,11 @@
   }
 
   .right {
-    float: left;
-    text-align: left;
+    @include layout-flex-column();
+    @include align-left();
+
     margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
+    max-width: 500px;
   }
 }
 

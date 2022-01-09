@@ -1,9 +1,9 @@
+@import "../app/styles/common/common.scss";
+
 .container {
+  @include align-center();
+
   width: 94vw;
   padding: 30px;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   height: 100%;
 }

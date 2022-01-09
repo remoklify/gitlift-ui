@@ -1,11 +1,13 @@
+@import "../../styles/common/common.scss";
+
 .achievement-card {
-  display: flex;
-  flex-direction: column;
-  float: left;
-  text-align: left;
+  @include layout-flex-column();
+  @include default-border-radius();
+  @include align-left();
+
   padding: 10px;
   border-top: 1px solid #eeeeee;
-  border-top-right-radius: 15px;
+
   .achievement {
     span {
       font-size: 16px;

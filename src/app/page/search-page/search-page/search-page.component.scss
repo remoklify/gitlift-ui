@@ -1,10 +1,10 @@
+@import "../../../styles/common/common.scss";
+
 .search-page {
+  @include layout-flex-column();
+  @include align-center();
+
   margin-top: 60px;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
 
   .brand-logo {
     width: 200px;
@@ -16,7 +16,7 @@
     .search-box {
       width: 40vw;
       border-radius: 15px;
-      border: 2px solid #f57f17;
+      border: 2px solid var(--theme-color);
       height: 30px;
       padding-left: 42px;
       padding-bottom: 1px;
@@ -25,7 +25,7 @@
     }
 
     .search-icon {
-      color: #f57f17;
+      color: var(--theme-color);
       position: absolute;
       margin-left: 16px;
       margin-top: 10px;

@@ -1,15 +1,16 @@
+@import "../../styles/common/common.scss";
+
 .language-container {
-  max-width: 400px;
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: content-box;
+  @include layout-flex-row();
+
   .language {
-    padding: 13px;
-    border-bottom-right-radius: 20px;
+    @include default-border-radius();
+
+    padding: 13px 26px 13px 13px;
     margin-left: 10px;
     font-size: 15px;
     text-align: center;
-    background-color: #f57f17;
+    background-color: var(--theme-color);
     color: #eeeeee;
   }
 }
