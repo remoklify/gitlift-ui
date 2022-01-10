@@ -28,13 +28,11 @@ export class ActivityCardComponent implements OnInit {
 
   private draw() {
     const chart: HTMLCanvasElement = this.activityChart.nativeElement;
-    chart.width = 200;
+    chart.width = 500;
     chart.height = 200;
+    this.context.fillStyle = 'rgba(136, 14, 79, 0.2)';
 
-    this.context.lineWidth = 5;
-    this.context.lineCap = 'round';
-    this.context.strokeStyle = '#fafafa';
-    this.context.shadowColor = '#fafafa';
+    this.context.fillRect(0, 0, chart.width, chart.height);
   }
 
   getDay = (weekday: number) => {
