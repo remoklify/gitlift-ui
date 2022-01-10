@@ -13,10 +13,27 @@ import { PersonalInformationCardComponent } from './component/personal-informati
 import { CoreInformationCardComponent } from './component/core-information-card/core-information-card.component';
 import { AchievementCardComponent } from './component/achievement-card/achievement-card.component';
 import { ContributionCardComponent } from './component/contribution-card/contribution-card.component';
+import { ActivityHistoryCardComponent } from './component/activity-history-card/activity-history-card.component';
 
 @NgModule({
-  declarations: [AppComponent, GithubUserCardComponent, UserPageComponent, SearchPageComponent, LanguageCardComponent, PersonalInformationCardComponent, CoreInformationCardComponent, AchievementCardComponent, ContributionCardComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
+  declarations: [
+    AppComponent,
+    GithubUserCardComponent,
+    UserPageComponent,
+    SearchPageComponent,
+    LanguageCardComponent,
+    PersonalInformationCardComponent,
+    CoreInformationCardComponent,
+    AchievementCardComponent,
+    ContributionCardComponent,
+    ActivityHistoryCardComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

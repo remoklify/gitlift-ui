@@ -1,4 +1,4 @@
-<div class="contribution-card">
+<div class="contribution-card" *ngIf="contribution">
   <div class="head">
     <p class="title">Contributions</p>
     <span class="description">
@@ -23,6 +23,11 @@
       <app-language-card
         [languages]="contribution.languages"
       ></app-language-card>
+    </div>
+
+    <div class="last-week-activity">
+      <p class="title">Last week activity</p>
+      <app-activity-history-card [activityHistory]="contribution.lastWeekEvents"></app-activity-history-card>
     </div>
   </div>
 </div>
