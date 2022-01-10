@@ -1,0 +1,9 @@
+<div class="activity-container">
+  <canvas #activityChart></canvas>
+  <ng-container *ngFor="let activity of contributionDays">
+    <p class="day">
+      {{ getDay(activity.weekday) }}
+      <span class="contribution">{{ activity.contributionCount }}</span>
+    </p>
+  </ng-container>
+</div>

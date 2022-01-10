@@ -14,6 +14,7 @@ import { CoreInformationCardComponent } from './component/core-information-card/
 import { AchievementCardComponent } from './component/achievement-card/achievement-card.component';
 import { ContributionCardComponent } from './component/contribution-card/contribution-card.component';
 import { ActivityHistoryCardComponent } from './component/activity-history-card/activity-history-card.component';
+import { ActivityCardComponent } from './component/activity-card/activity-card.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ActivityHistoryCardComponent } from './component/activity-history-card/
     AchievementCardComponent,
     ContributionCardComponent,
     ActivityHistoryCardComponent,
+    ActivityCardComponent,
   ],
   imports: [
     BrowserModule,
