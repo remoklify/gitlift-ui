@@ -16,12 +16,10 @@ export class ActivityCardComponent implements OnInit {
 
   private width: number = 500;
   private height: number = 200;
-  private padding: number = 50;
-  private font: string = '12pt Calibri';
-  private x: number = 0;
-  private y: number = 0;
-  private maxX: number = 0;
+  private padding: number = 20;
   private maxY: number = 0;
+  private tickSize: number = 4;
+  private tickPadding: number = 4;
 
   constructor() {}
 
@@ -57,21 +55,21 @@ export class ActivityCardComponent implements OnInit {
 
     const max = this.getMaxContribution(contributionDays);
 
-    this.x =
-      this.getLongestValueWidth(contributionDays.length) + this.padding * 2;
-    this.y = this.padding * 2;
+    this.drawXAxis(this.context, contributionDays, this.tickSize);
+    this.drawYxis(this.context, max, this.tickSize);
 
-    this.drawXAxis(this.context, contributionDays, 5);
+    let lineX = this.getLongestValueWidth(contributionDays.length) + this.padding * 2;
+    let lineY = this.padding * 2;
 
-    // for (let i = 0; i < contributionDays.length; i++) {
-    //   const act = contributionDays[i];
-    //   // let toY =
-    //   //   y + (act.contributionCount / max) * (this.height - this.padding);
-    //   // let toX = x + this.width / contributionDays.length;
-    //   // this.drawLine(this.context, x, y, toX, toY);
-    //   // y = toY;
-    //   // x = toX;
-    // }
+    for (let i = 0; i < contributionDays.length; i++) {
+      const act = contributionDays[i];
+      let toY =
+        lineY + (act.contributionCount / max) * (this.height - this.padding);
+      let toX = lineX + this.width / contributionDays.length;
+      this.drawLine(this.context, lineX, lineY, toX, toY);
+      lineY = toY;
+      lineX = toX;
+    }
   };
 
   drawLine = (
@@ -87,7 +85,6 @@ export class ActivityCardComponent implements OnInit {
     ctx.strokeStyle = '#d2cece';
     ctx.lineWidth = 2;
     ctx.stroke();
-    ctx.translate(toX, toY);
   };
 
   drawXAxis = (
@@ -96,25 +93,46 @@ export class ActivityCardComponent implements OnInit {
     tickSize: number
   ) => {
     let x = 0;
-    let y = this.height - tickSize;
+    let y = this.height;
     for (var n = 0; n < contributionDays.length; n++) {
       const act = contributionDays[n];
-      x = (n + 1) * (this.width / contributionDays.length);
-      this.drawLine(ctx, x, y, x, y + tickSize);
-      this.drawText(ctx, act.weekday, x, y);
+      x = (n + 1) * (this.width / contributionDays.length) - this.padding;
+      //this.drawLine(ctx, x, y, x, y + tickSize);
+      this.drawText(
+        ctx,
+        this.getDay(act.weekday),
+        x,
+        y - tickSize - this.tickPadding
+      );
+    }
+  };
+
+  drawYxis = (ctx: CanvasRenderingContext2D, max: number, tickSize: number) => {
+    let x = 0;
+    let y = 0;
+    for (var n = 0; n <= max; n++) {
+      y = (n + 1) * (this.height / max) - this.padding;
+      //this.drawLine(ctx, x, y, x + tickSize, y);
+      this.drawText(
+        ctx,
+        (max - n).toString(),
+        x + tickSize + this.tickPadding,
+        y
+      );
     }
   };
 
   drawText = (
     ctx: CanvasRenderingContext2D,
-    weekday: number,
+    text: string,
     x: number,
     y: number
   ) => {
     ctx.lineWidth = 0.5;
+    ctx.strokeStyle = '#d2cece';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.strokeText(this.getDay(weekday), 80, 10);
+    ctx.strokeText(text, x, y);
   };
 
   getMaxContribution = (contributionDays: Activity[]) => {
