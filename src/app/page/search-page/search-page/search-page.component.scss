@@ -4,6 +4,7 @@
   @include layout-flex-column();
   @include align-center();
 
+  width: 100%;
   margin-top: 60px;
 
   .brand-logo {
@@ -13,6 +14,7 @@
 
   .search-container {
     margin-top: 20px;
+
     .search-box {
       width: 40vw;
       border-radius: 15px;
@@ -29,6 +31,7 @@
       position: absolute;
       margin-left: 16px;
       margin-top: 10px;
+      font-size: 20px;
     }
   }
 
@@ -55,24 +58,12 @@
   }
 }
 
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 999px) {
   .search-page {
-    width: 90vw;
-    margin-left: -10px;
     .search-container {
+      width: 100%;
       .search-box {
-        width: 90vw;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 599px) and (max-width: 999px)  {
-  .search-page {
-    width: 90vw;
-    .search-container {
-      .search-box {
-        width: 90vw;
+        width: 90%;
       }
     }
   }

@@ -1,7 +1,8 @@
 @import "../../styles/common/common.scss";
 
 .github-user {
-  width: 94vw;
+  @include align-center();
+  width: 90%;
   color: var(--text-color);
 
   .left {
@@ -32,7 +33,7 @@
 
   .back-button {
     margin-top: 30px;
-
+    margin-bottom: 50px;
     input {
       cursor: pointer;
       @include default-border-radius();
@@ -47,6 +48,8 @@
   }
 
   .user-not-found {
+    margin-top: 20vh;
+    margin-left: 10vw;
     p {
       font-size: 18px;
       span {
@@ -59,14 +62,11 @@
 
 @media only screen and (max-width: 999px) {
   .github-user {
-    .right {
-      margin-left: 122px;
+    .left {
+      margin-left: 20px;
     }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .github-user {
-    margin-left: -150px;
+    .right {
+      margin-left: 20px;
+    }
   }
 }
