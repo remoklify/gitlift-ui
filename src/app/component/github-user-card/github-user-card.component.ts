@@ -10,6 +10,7 @@ import { GithubService } from 'src/app/service/github/github.service';
 export class GithubUserCardComponent implements OnInit {
   @Input() username: string = '';
   public user: GithubUser = {} as GithubUser;
+  public loading: boolean = true;
 
   constructor(private githubService: GithubService) {}
 
@@ -19,6 +20,7 @@ export class GithubUserCardComponent implements OnInit {
         .getGithubUserWithUsername(this.username)
         .then((data) => {
           data.subscribe((githubUser) => {
+           this.loading = false;
             this.user = githubUser;
             this.user.contribution.languages =
               githubUser.contribution.languages.filter(

@@ -6,7 +6,7 @@
   @include align-left();
 
   padding: 10px;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid var(--text-color);
 
   .achievement {
     span {

@@ -1,5 +1,5 @@
 <div class="github-user">
-  <div class="left">
+  <div class="left" *ngIf="!loading">
     <app-core-information-card
       [info]="user.coreInformation"
     ></app-core-information-card>
@@ -16,9 +16,10 @@
       </div>
     </div>
   </div>
-  <div class="right">
+  <div class="right" *ngIf="!loading">
     <app-contribution-card
       [contribution]="user.contribution"
     ></app-contribution-card>
   </div>
+  <app-loader *ngIf="loading"></app-loader>
 </div>

@@ -2,7 +2,7 @@
 
 .github-user {
   width: 94vw;
-  color: #d2cece;
+  color: var(--text-color);
 
   .left {
     @include layout-flex-column();
@@ -24,6 +24,10 @@
 
     margin-left: 100px;
     max-width: 500px;
+  }
+
+  app-loader {
+    position: absolute;
   }
 }
 

@@ -15,6 +15,7 @@ import { AchievementCardComponent } from './component/achievement-card/achieveme
 import { ContributionCardComponent } from './component/contribution-card/contribution-card.component';
 import { ActivityHistoryCardComponent } from './component/activity-history-card/activity-history-card.component';
 import { ActivityCardComponent } from './component/activity-card/activity-card.component';
+import { LoaderComponent } from './component/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ActivityCardComponent } from './component/activity-card/activity-card.c
     ContributionCardComponent,
     ActivityHistoryCardComponent,
     ActivityCardComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
