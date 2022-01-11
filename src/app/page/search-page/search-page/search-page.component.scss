@@ -31,13 +31,48 @@
       margin-top: 10px;
     }
   }
+
+  .footer {
+    @include layout-flex-column();
+
+    margin-top: 30px;
+
+    .developed-by {
+      a {
+        img {
+          width: 240px;
+        }
+      }
+    }
+    .powered-by {
+      padding-top: 5px;
+      a {
+        img {
+          width: 130px;
+        }
+      }
+    }
+  }
 }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 599px) {
   .search-page {
+    width: 90vw;
+    margin-left: -10px;
     .search-container {
       .search-box {
-        width: 94vw;
+        width: 90vw;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 599px) and (max-width: 999px)  {
+  .search-page {
+    width: 90vw;
+    .search-container {
+      .search-box {
+        width: 90vw;
       }
     }
   }
