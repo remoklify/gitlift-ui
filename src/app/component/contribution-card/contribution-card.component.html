@@ -1,24 +1,27 @@
 <div class="contribution-card" *ngIf="contribution">
   <div class="head">
     <p class="title">Contributions</p>
-    <span class="description">
+    <span class="description" *ngIf="contribution.totalContributionsCount">
       This information is prepared according to last one year activity.
     </span>
-    <p class="total-contribution">
+    <span class="description" *ngIf="!contribution.totalContributionsCount">
+      Contribution not found for this profile.
+    </span>
+    <p class="total-contribution" *ngIf="contribution.totalContributionsCount">
       Total Contributions:
       <span>{{ contribution.totalContributionsCount }}</span>
     </p>
   </div>
 
   <div class="body">
-    <div class="primary-languages">
+    <div class="primary-languages"  *ngIf="contribution.primaryLanguages && contribution.primaryLanguages.length > 0">
       <p class="title">Primary languages</p>
       <app-language-card
         [languages]="contribution.primaryLanguages"
       ></app-language-card>
     </div>
 
-    <div class="languages">
+    <div class="languages"  *ngIf="contribution.languages && contribution.languages.length > 0">
       <p class="title">Also experienced in</p>
       <app-language-card
         [languages]="contribution.languages"
