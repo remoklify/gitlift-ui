@@ -29,6 +29,29 @@
   app-loader {
     position: absolute;
   }
+
+  .back-button {
+    input {
+      @include default-border-radius();
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      font-size: 15px;
+      font-weight: 600;
+      height: 40px;
+      width: 120px;
+      border: 0px;
+    }
+  }
+
+  .user-not-found {
+    p {
+      font-size: 18px;
+      span {
+        color: var(--theme-color);
+        font-weight: 600;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 999px) {
