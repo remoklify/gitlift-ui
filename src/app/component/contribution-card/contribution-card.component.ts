@@ -14,9 +14,9 @@ export class ContributionCardComponent implements OnInit {
   ngOnInit(): void {}
 
   getBadge = (contributionCount: number) => {
-    if (contributionCount >= 5000) {
+    if (contributionCount >= 4000) {
       return 'master';
-    } else if (contributionCount >= 3000) {
+    } else if (contributionCount >= 2000) {
       return 'expert';
     } else if (contributionCount >= 1000) {
       return 'pro';
