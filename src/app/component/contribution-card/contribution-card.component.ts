@@ -20,6 +20,8 @@ export class ContributionCardComponent implements OnInit {
       return 'expert';
     } else if (contributionCount >= 1000) {
       return 'pro';
+    } else if (contributionCount >= 500) {
+      return 'determined';
     } else {
       return 'beginner';
     }
