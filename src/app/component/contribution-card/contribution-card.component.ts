@@ -19,7 +19,7 @@ export class ContributionCardComponent implements OnInit {
     } else if (contributionCount >= 2000) {
       return 'expert';
     } else if (contributionCount >= 1000) {
-      return 'pro';
+      return 'productive';
     } else if (contributionCount >= 500) {
       return 'determined';
     } else {
