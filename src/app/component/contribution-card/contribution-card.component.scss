@@ -6,12 +6,7 @@
       font-size: 24px;
       font-weight: 600;
     }
-    .total-contribution {
-      span {
-        font-weight: 600;
-        color: var(--theme-color);
-      }
-    }
+
     .badge {
       height: 174px;
       width: 172px;
@@ -25,32 +20,49 @@
 
         fa-icon {
           color: var(--theme-color);
+          width: 36px;
+          padding-top: 4px;
         }
-        span {
-          padding-left: 8px;
-          padding-top: 2px;
-        }
-        .title {
-          text-align: left;
-          font-weight: 600;
-          font-size: 16px;
-          color: var(--text-color);
-        }
-        .value {
-          font-weight: 600;
-          font-size: 16px;
-          color: var(--theme-color);
+
+        .right {
+          @include layout-flex-column();
+
+          span {
+            font-size: 17px;
+            font-weight: 600;
+            text-align: left;
+          }
+
+          .title {
+            color: var(--text-color);
+          }
+
+          .value {
+            color: var(--theme-color);
+          }
         }
       }
 
-      .sub-contributions {
+      .total {
         @include layout-flex-column();
-        padding-right: 20px;
+        text-align: left;
+        font-size: 20px;
+        font-weight: 600;
+
+        span {
+          color: var(--theme-color);
+          padding-top: 2px;
+        }
+      }
+
+      .contributions {
+        @include layout-flex-column();
+        padding-right: 40px;
       }
 
       .popularity {
         @include layout-flex-column();
-        margin-left: 20px;
+        margin-left: 40px;
       }
     }
   }
@@ -61,4 +73,7 @@
       font-weight: 600;
     }
   }
+}
+
+@media only screen and (max-width: 999px) {
 }
