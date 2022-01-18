@@ -1,3 +1,5 @@
+@import "../../styles/common/common.scss";
+
 .contribution-card {
   .head {
     .title {
@@ -13,6 +15,43 @@
     .badge {
       height: 174px;
       width: 172px;
+    }
+
+    .contribution-details {
+      @include layout-flex-row();
+
+      p {
+        @include layout-flex-row();
+
+        fa-icon {
+          color: var(--theme-color);
+        }
+        span {
+          padding-left: 8px;
+          padding-top: 2px;
+        }
+        .title {
+          text-align: left;
+          font-weight: 600;
+          font-size: 16px;
+          color: var(--text-color);
+        }
+        .value {
+          font-weight: 600;
+          font-size: 16px;
+          color: var(--theme-color);
+        }
+      }
+
+      .sub-contributions {
+        @include layout-flex-column();
+        padding-right: 20px;
+      }
+
+      .popularity {
+        @include layout-flex-column();
+        margin-left: 20px;
+      }
     }
   }
 

@@ -1,4 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {
+  faCheckDouble,
+  faCode,
+  faCodeBranch,
+  faEnvelope,
+  faFire,
+  faProjectDiagram,
+  faStar,
+} from '@fortawesome/free-solid-svg-icons';
 import { Contribution } from 'src/app/model/contribution/contribution.model';
 
 @Component({
@@ -8,6 +17,14 @@ import { Contribution } from 'src/app/model/contribution/contribution.model';
 })
 export class ContributionCardComponent implements OnInit {
   @Input() contribution: Contribution = {} as Contribution;
+
+  faCode = faCode;
+  faCodeBranch = faCodeBranch;
+  faCheckDouble = faCheckDouble;
+  faEnvelope = faEnvelope;
+  faStar = faStar;
+  faProjectDiagram = faProjectDiagram;
+  faFire = faFire;
 
   constructor() {}
 

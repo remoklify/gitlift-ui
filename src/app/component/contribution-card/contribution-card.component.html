@@ -1,6 +1,6 @@
 <div class="contribution-card" *ngIf="contribution">
   <div class="head">
-    <p class="title">Contributions</p>
+    <p class="title">Contribution Metrics</p>
     <span class="description" *ngIf="contribution.totalContributionsCount">
       This information is prepared according to last one year activity.
     </span>
@@ -9,9 +9,54 @@
       activity.
     </span>
     <p class="total-contribution" *ngIf="contribution.totalContributionsCount">
-      Total Contributions:
+      Total Contributions
       <span>{{ contribution.totalContributionsCount }}</span>
     </p>
+    <div class="contribution-details">
+      <div class="sub-contributions">
+        <p>
+          <fa-icon [icon]="faCode" class="fa-lg"></fa-icon>
+          <span class="title">Commit</span>
+          <span class="value">{{ contribution.totalCommitContributions }}</span>
+        </p>
+        <p>
+          <fa-icon [icon]="faEnvelope" class="fa-lg"></fa-icon>
+          <span class="title">Issue</span>
+          <span class="value">{{ contribution.totalIssueContributions }}</span>
+        </p>
+        <p>
+          <fa-icon [icon]="faCodeBranch" class="fa-lg"></fa-icon>
+          <span class="title">PR</span>
+          <span class="value">{{
+            contribution.totalPullRequestContributions
+          }}</span>
+        </p>
+        <p>
+          <fa-icon [icon]="faCheckDouble" class="fa-lg"></fa-icon>
+          <span class="title">PR Review</span>
+          <span class="value">{{
+            contribution.totalPullRequestReviewContributions
+          }}</span>
+        </p>
+      </div>
+      <div class="popularity">
+        <p>
+          <fa-icon [icon]="faStar" class="fa-lg"></fa-icon>
+          <span class="title">Stars</span>
+          <span class="value">{{ contribution.totalStargazerCount }}</span>
+        </p>
+        <p>
+          <fa-icon [icon]="faProjectDiagram" class="fa-lg"></fa-icon>
+          <span class="title">Forks</span>
+          <span class="value">{{ contribution.totalForkCount }}</span>
+        </p>
+        <p>
+          <fa-icon [icon]="faFire" class="fa-lg"></fa-icon>
+          <span class="title">Followers</span>
+          <span class="value">{{ contribution.totalFollowersCount }}</span>
+        </p>
+      </div>
+    </div>
     <img
       class="badge"
       [src]="
