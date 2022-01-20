@@ -8,12 +8,16 @@
       Contribution not found for this profile according to last one year
       activity.
     </span>
+  </div>
+
+  <div class="body">
     <div class="contribution-details">
+      <p class="total sub-head">
+        Contributions
+        <span>{{ contribution.totalContributionsCount }}</span>
+      </p>
+
       <div class="contributions">
-        <p class="total">
-          Contributions
-          <span>{{ contribution.totalContributionsCount }}</span>
-        </p>
         <p>
           <fa-icon [icon]="faCode" class="fa-lg"></fa-icon>
           <span class="right">
@@ -51,13 +55,15 @@
           </span>
         </p>
       </div>
+
+      <p class="total sub-head">
+        Popularity
+        <span>{{
+          contribution.totalStargazerCount + contribution.totalForkCount
+        }}</span>
+      </p>
+
       <div class="popularity">
-        <p class="total">
-          Popularity
-          <span>{{
-            contribution.totalStargazerCount + contribution.totalForkCount
-          }}</span>
-        </p>
         <p>
           <fa-icon [icon]="faStar" class="fa-lg"></fa-icon>
           <span class="right">
@@ -78,18 +84,18 @@
           <span class="value">{{ contribution.totalFollowersCount }}</span>
         </p> -->
       </div>
-    </div>
-    <img
-      class="badge"
-      [src]="
-        './assets/badges/' +
-        getBadge(contribution.totalContributionsCount) +
-        '-badge.png'
-      "
-    />
-  </div>
 
-  <div class="body">
+      <p class="total sub-head">My Gitlift Badge</p>
+      <img
+        class="badge"
+        [src]="
+          './assets/badges/' +
+          getBadge(contribution.totalContributionsCount) +
+          '-badge.png'
+        "
+      />
+    </div>
+
     <div
       class="primary-languages"
       *ngIf="
@@ -97,7 +103,7 @@
         contribution.primaryLanguages.length > 0
       "
     >
-      <p class="title">Primary languages</p>
+      <p class="sub-head">Primary languages</p>
       <app-language-card
         [languages]="contribution.primaryLanguages"
       ></app-language-card>
@@ -107,7 +113,7 @@
       class="languages"
       *ngIf="contribution.languages && contribution.languages.length > 0"
     >
-      <p class="title">Also experienced in</p>
+      <p class="sub-head">Also experienced in</p>
       <app-language-card
         [languages]="contribution.languages"
       ></app-language-card>
