@@ -3,7 +3,7 @@
 .contribution-card {
   .head {
     .title {
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 600;
     }
   }
@@ -15,7 +15,7 @@
     }
 
     .sub-head {
-      font-size: 18px;
+      font-size: 19px;
       margin-top: 25px;
       font-weight: 600;
     }
@@ -57,27 +57,21 @@
 
         span {
           color: var(--theme-color);
-          padding-top: 2px;
+          padding-top: 10px;
         }
-      }
-
-      .contributions {
-        @include layout-flex-row();
-      }
-
-      .popularity {
-        @include layout-flex-row();
       }
 
       .contributions,
       .popularity {
+        @include layout-flex-row();
         @include default-border-radius();
 
-        border: 1px solid var(--theme-color);
+        flex-wrap: wrap;
+        border-top: 1px solid var(--text-color);
         padding: 1px 10px 1px 10px;
 
         p:not(:first-child) {
-          margin-left: 30px;
+          margin-left: 20px;
           border-left: 2px solid var(--text-color);
           padding-left: 10px;
         }
@@ -87,4 +81,20 @@
 }
 
 @media only screen and (max-width: 999px) {
+  .contribution-card {
+    .body {
+      .contribution-details {
+        .contributions,
+        .popularity {
+          @include layout-flex-column();
+
+          p:not(:first-child) {
+            margin-left: 0px;
+            padding-left: 0px;
+            border-left: 0px;
+          }
+        }
+      }
+    }
+  }
 }

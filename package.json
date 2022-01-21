@@ -26,6 +26,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "compression": "^1.7.4",
+    "dom-to-svg": "^0.12.2",
     "dotenv": "^11.0.0",
     "esbuild": "^0.14.11",
     "express": "^4.17.2",
