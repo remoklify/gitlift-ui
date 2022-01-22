@@ -1,17 +1,5 @@
-<!-- <div class="actions">
-  <div class="download-button" *ngIf="!loading" (click)="integrate()">
-    <fa-icon [icon]="faBack" class="fa-lg"></fa-icon
-    ><input type="button" value="Integrate Profile to Github" />
-  </div>
-  
-  <div class="back-button" *ngIf="!loading" (click)="back()">
-    <fa-icon [icon]="faBack" class="fa-lg"></fa-icon
-    ><input type="button" value="Back" />
-  </div>
-</div> -->
-
-<div class="github-user" #mark>
-  <div class="left" *ngIf="!loading && userFound">
+<div class="github-user">
+  <div class="left" *ngIf="!loading && userFound && !onlyMetrics">
     <app-core-information-card
       [info]="user.coreInformation"
     ></app-core-information-card>
@@ -28,7 +16,7 @@
       </div>
     </div>
   </div>
-  <div class="right" *ngIf="!loading && userFound">
+  <div id="exportable" class="right" *ngIf="!loading && userFound">
     <app-contribution-card
       [contribution]="user.contribution"
     ></app-contribution-card>
@@ -40,3 +28,15 @@
     </p>
   </div>
 </div>
+
+<!-- <div class="actions">
+  <div class="download-button" *ngIf="!loading" (click)="exportAsMarkDown()">
+    <fa-icon [icon]="faBack" class="fa-lg"></fa-icon
+    ><input type="button" value="Convert to Pdf" />
+  </div>
+  
+  <div class="back-button" *ngIf="!loading" (click)="back()">
+    <fa-icon [icon]="faBack" class="fa-lg"></fa-icon
+    ><input type="button" value="Back" />
+  </div>
+</div> -->

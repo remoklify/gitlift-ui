@@ -30,7 +30,7 @@ import { LoaderComponent } from './component/loader/loader.component';
     ContributionCardComponent,
     ActivityHistoryCardComponent,
     ActivityCardComponent,
-    LoaderComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

@@ -22,7 +22,8 @@
   .right {
     @include layout-flex-column();
     @include align-left();
-
+    
+    background-color: var(--bg-color);
     margin-left: 100px;
     max-width: 500px;
   }
