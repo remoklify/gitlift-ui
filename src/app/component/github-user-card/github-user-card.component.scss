@@ -22,7 +22,7 @@
   .right {
     @include layout-flex-column();
     @include align-left();
-    
+
     background-color: var(--bg-color);
     margin-left: 100px;
     max-width: 500px;
@@ -47,21 +47,25 @@
 
 .actions {
   @include layout-flex-row();
-  margin-bottom: 50px;
+  height: 60px;
+  background-color: var(--header-color);
   width: 100%;
+  margin-bottom: 20px;
   align-items: center;
   .download-button,
   .back-button {
+    margin-left: 30px;
+    color: var(--bg-color);
+
     input {
       cursor: pointer;
-      @include default-border-radius();
-      background-color: var(--text-color);
-      color: var(--bg-color);
+      background-color: var(--header-color);
       font-size: 15px;
       font-weight: 600;
       height: 40px;
       width: auto;
       padding-right: 15px;
+      padding-left: 10px;
       border: 0px;
     }
   }

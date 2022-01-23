@@ -16,6 +16,8 @@ import { ContributionCardComponent } from './component/contribution-card/contrib
 import { ActivityHistoryCardComponent } from './component/activity-history-card/activity-history-card.component';
 import { ActivityCardComponent } from './component/activity-card/activity-card.component';
 import { LoaderComponent } from './component/loader/loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { LoaderComponent } from './component/loader/loader.component';
     ContributionCardComponent,
     ActivityHistoryCardComponent,
     ActivityCardComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent],

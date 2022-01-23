@@ -1,6 +1,11 @@
 @import "../../styles/common/common.scss";
 
 .contribution-card {
+  .description {
+    font-size: 17px;
+    font-weight: 400;
+  }
+
   .head {
     .title {
       font-size: 25px;
@@ -12,6 +17,7 @@
     .badge {
       height: 174px;
       width: 172px;
+      margin-top: 10px;
     }
 
     .sub-head {

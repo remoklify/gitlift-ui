@@ -1,8 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faBackward } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
 import { Location } from '@angular/common';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { MD_BADGE } from 'src/app/app.constant';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-github-user-card',
@@ -17,11 +20,13 @@ export class GithubUserCardComponent implements OnInit {
   public userFound: boolean = false;
   public loading: boolean = true;
 
-  faBack = faBackward;
+  faBack = faChevronLeft;
+  faGithub = faGithub;
 
   constructor(
     private githubService: GithubService,
-    private location: Location
+    private location: Location,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -53,5 +58,11 @@ export class GithubUserCardComponent implements OnInit {
 
   back = () => {
     this.location.back();
+  };
+
+  generateMdBadge = () => {
+    const mdBadge = MD_BADGE.replace('${username}', this.username);
+    navigator.clipboard.writeText(mdBadge);
+    this.toastr.success('Successfully copied to clipboard. Now you can add the badge to your Github Profile.', 'Gitlift Badge is generated!');
   };
 }
