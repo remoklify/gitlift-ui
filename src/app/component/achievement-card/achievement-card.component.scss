@@ -10,12 +10,13 @@
 
   .achievement {
     span {
-      font-size: 16px;
+      font-size: var(--body-font-size);
       font-weight: 600;
     }
 
     fa-icon {
       margin-left: 10px;
+      font-size: var(--icon-font-size);
     }
 
     .positive {

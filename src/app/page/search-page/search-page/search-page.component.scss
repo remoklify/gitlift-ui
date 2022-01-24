@@ -22,7 +22,7 @@
       height: 30px;
       padding-left: 42px;
       padding-bottom: 1px;
-      font-size: 14px;
+      font-size: var(--body-font-size);
       height: 40px;
     }
 
@@ -30,8 +30,8 @@
       color: var(--theme-color);
       position: absolute;
       margin-left: 16px;
-      margin-top: 10px;
-      font-size: 20px;
+      margin-top: 8px;
+      font-size: var(--icon-font-size);
     }
   }
 

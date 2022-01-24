@@ -21,18 +21,18 @@
     margin-top: 10px;
 
     .name {
-      font-size: 24px;
+      font-size: var(--header-font-size);
       font-weight: 600;
     }
 
     .login {
-      font-size: 18px;
+      font-size: var(--sub-header-font-size);
       font-weight: 600;
     }
 
     .bio {
       margin-top: 10px;
-      font-size: 18px;
+      font-size: var(--body-font-size);
       font-weight: 400;
     }
   }

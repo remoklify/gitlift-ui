@@ -2,13 +2,13 @@
 
 .contribution-card {
   .description {
-    font-size: 17px;
+    font-size: var(--body-font-size);
     font-weight: 400;
   }
 
   .head {
     .title {
-      font-size: 25px;
+      font-size: var(--header-font-size);
       font-weight: 600;
     }
   }
@@ -21,7 +21,7 @@
     }
 
     .sub-head {
-      font-size: 19px;
+      font-size: var(--sub-header-font-size);
       margin-top: 25px;
       font-weight: 600;
     }
@@ -35,14 +35,15 @@
         fa-icon {
           color: var(--theme-color);
           width: 36px;
-          padding-top: 4px;
+          padding-top: 8px;
+          font-size: var(--icon-font-size);
         }
 
         .right {
           @include layout-flex-column();
 
           span {
-            font-size: 17px;
+            font-size: var(--body-font-size);
             font-weight: 600;
             text-align: left;
           }

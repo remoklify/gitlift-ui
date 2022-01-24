@@ -36,7 +36,7 @@
     margin-top: 20vh;
     margin-left: 10vw;
     p {
-      font-size: 18px;
+      font-size: var(--sub-header-font-size);
       span {
         color: var(--theme-color);
         font-weight: 600;
@@ -61,7 +61,7 @@
       cursor: pointer;
       color: var(--theme-color);
       background-color: var(--header-color);
-      font-size: 15px;
+      font-size: var(--body-font-size);
       font-weight: 600;
       height: 40px;
       width: auto;

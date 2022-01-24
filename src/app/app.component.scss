@@ -12,7 +12,7 @@
   & .body {
     box-sizing: border-box;
     padding: 25px;
-    font-size: 17px;
+    font-size: var(--body-font-size);
 
     & .social-login-wrapper {
       & > * {
