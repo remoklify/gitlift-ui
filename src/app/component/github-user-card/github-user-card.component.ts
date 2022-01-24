@@ -61,7 +61,7 @@ export class GithubUserCardComponent implements OnInit {
   };
 
   generateMdBadge = () => {
-    const mdBadge = MD_BADGE.replace('${username}', this.username);
+    const mdBadge = MD_BADGE.replace(/\${username}/g, this.username.toLowerCase());
     navigator.clipboard.writeText(mdBadge);
     this.toastr.success('Successfully copied to clipboard. Now you can add the badge to your Github Profile.', 'Gitlift Badge is generated!');
   };
