@@ -43,6 +43,13 @@ export class GithubUserCardComponent implements OnInit {
                   (l: string) =>
                     githubUser.contribution.primaryLanguages.indexOf(l) === -1
                 );
+              this.user.contribution.restrictedContributions =
+                this.user.contribution.totalContributionsCount -
+                this.user.contribution.totalCommitContributions -
+                this.user.contribution.totalIssueContributions -
+                this.user.contribution.totalPullRequestContributions -
+                this.user.contribution.totalPullRequestReviewContributions -
+                this.user.contribution.totalRepositoryContributions;
             } else {
               console.log('user not found');
               this.userFound = false;
@@ -61,8 +68,14 @@ export class GithubUserCardComponent implements OnInit {
   };
 
   generateMdBadge = () => {
-    const mdBadge = MD_BADGE.replace(/\${username}/g, this.username.toLowerCase());
+    const mdBadge = MD_BADGE.replace(
+      /\${username}/g,
+      this.username.toLowerCase()
+    );
     navigator.clipboard.writeText(mdBadge);
-    this.toastr.success('Successfully copied to clipboard. Now you can add the badge to your Github Profile.', 'Gitlift Badge is generated!');
+    this.toastr.success(
+      'Successfully copied to clipboard. Now you can add the badge to your Github Profile.',
+      'Gitlift Badge is generated!'
+    );
   };
 }

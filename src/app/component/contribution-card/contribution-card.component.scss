@@ -71,15 +71,14 @@
       .popularity {
         @include layout-flex-row();
         @include default-border-radius();
-
-        flex-wrap: wrap;
+        
         border-top: 1px solid var(--text-color);
         padding: 1px 10px 1px 10px;
-
-        p:not(:first-child) {
-          margin-left: 20px;
-          border-left: 2px solid var(--text-color);
-          padding-left: 10px;
+        
+        p:not(:first-child, :nth-child(5)) {
+          margin-left: 22px;
+          border-left: 1px solid var(--header-color);
+          padding-left: 12px;
         }
       }
     }
@@ -94,7 +93,7 @@
         .popularity {
           @include layout-flex-column();
 
-          p:not(:first-child) {
+          p:not(:first-child, :nth-child(5)) {
             margin-left: 0px;
             padding-left: 0px;
             border-left: 0px;

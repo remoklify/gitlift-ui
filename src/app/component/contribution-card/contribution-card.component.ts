@@ -3,7 +3,9 @@ import {
   faCheckDouble,
   faCode,
   faCodeBranch,
+  faDatabase,
   faEnvelope,
+  faEyeSlash,
   faFire,
   faProjectDiagram,
   faStar,
@@ -25,6 +27,8 @@ export class ContributionCardComponent implements OnInit {
   faStar = faStar;
   faProjectDiagram = faProjectDiagram;
   faFire = faFire;
+  faDatabase = faDatabase;
+  faEyeSlash = faEyeSlash; 
 
   constructor() {}
 

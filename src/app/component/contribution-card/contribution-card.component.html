@@ -54,6 +54,24 @@
             }}</span>
           </span>
         </p>
+        <p>
+          <fa-icon [icon]="faDatabase" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Repository</span>
+            <span class="value">{{
+              contribution.totalRepositoryContributions
+            }}</span>
+          </span>
+        </p>
+        <p>
+          <fa-icon [icon]="faEyeSlash" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Restricted</span>
+            <span class="value">{{
+              contribution.restrictedContributions
+            }}</span>
+          </span>
+        </p>
       </div>
 
       <p class="total sub-head">Contribution Badge</p>
