@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Language } from 'src/app/model/language/language.model';
 
 @Component({
   selector: 'app-language-card',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./language-card.component.scss'],
 })
 export class LanguageCardComponent implements OnInit {
-  @Input() languages: string[] = [];
+  @Input() languages: Language[] = [];
 
   constructor() {}
 

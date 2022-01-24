@@ -6,6 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { MD_BADGE } from 'src/app/app.constant';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Language } from 'src/app/model/language/language.model';
 
 @Component({
   selector: 'app-github-user-card',
@@ -38,10 +39,12 @@ export class GithubUserCardComponent implements OnInit {
             if (githubUser && githubUser.contribution) {
               this.userFound = true;
               this.user = githubUser;
+              const length = githubUser.contribution.languages.length >= 3 ? 3 : githubUser.contribution.languages.length;
+              this.user.contribution.primaryLanguages = this.user.contribution.languages.slice(0, length);
               this.user.contribution.languages =
                 githubUser.contribution.languages.filter(
-                  (l: string) =>
-                    githubUser.contribution.primaryLanguages.indexOf(l) === -1
+                  (l: Language) =>
+                    this.user.contribution.primaryLanguages.indexOf(l) === -1
                 );
               this.user.contribution.restrictedContributions =
                 this.user.contribution.totalContributionsCount -

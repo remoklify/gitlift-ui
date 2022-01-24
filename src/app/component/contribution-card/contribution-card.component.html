@@ -120,7 +120,13 @@
         </p>
       </div>
     </div>
-    <div class="head">
+    <div
+      class="head"
+      *ngIf="
+        contribution.primaryLanguages &&
+        contribution.primaryLanguages.length > 0
+      "
+    >
       <p class="title">Skills</p>
     </div>
     <div

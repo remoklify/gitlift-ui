@@ -1,4 +1,5 @@
 import { ActivityHistory } from '../activity-history/activity-history.model';
+import { Language } from '../language/language.model';
 
 export interface Contribution {
   totalCommitContributions: number;
@@ -12,6 +13,6 @@ export interface Contribution {
   totalForkCount: number;
   totalFollowersCount: number;
   lastWeekEvents: ActivityHistory;
-  languages: string[];
-  primaryLanguages: string[];
+  languages: Language[];
+  primaryLanguages: Language[];
 }
