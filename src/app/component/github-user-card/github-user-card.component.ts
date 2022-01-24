@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
-import { Location } from '@angular/common';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { MD_BADGE } from 'src/app/app.constant';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-github-user-card',
@@ -25,7 +25,7 @@ export class GithubUserCardComponent implements OnInit {
 
   constructor(
     private githubService: GithubService,
-    private location: Location,
+    private router: Router,
     private toastr: ToastrService
   ) {}
 
@@ -64,7 +64,9 @@ export class GithubUserCardComponent implements OnInit {
   }
 
   back = () => {
-    this.location.back();
+    this.router.navigate(['/']).then(() => {
+      return true;
+    });
   };
 
   generateMdBadge = () => {
