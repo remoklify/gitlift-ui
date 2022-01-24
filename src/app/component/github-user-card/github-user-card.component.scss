@@ -55,10 +55,11 @@
   .download-button,
   .back-button {
     margin-left: 30px;
-    color: var(--bg-color);
+    color: var(--theme-color);
 
     input {
       cursor: pointer;
+      color: var(--theme-color);
       background-color: var(--header-color);
       font-size: 15px;
       font-weight: 600;
