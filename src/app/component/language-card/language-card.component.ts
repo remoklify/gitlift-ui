@@ -9,7 +9,17 @@ import { Language } from 'src/app/model/language/language.model';
 export class LanguageCardComponent implements OnInit {
   @Input() languages: Language[] = [];
 
+  public MAX: number = 1000;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.languages.forEach((l: Language) => {
+      let fill =
+        (l.point / this.MAX) * 100 > 100 ? 100 : (l.point / this.MAX) * 100;
+      l.fill = fill;
+      l.out = 100 - fill > 1 ? 1 : 100 - fill;
+      console.log(l);
+    });
+  }
 }

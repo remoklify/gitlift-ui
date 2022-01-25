@@ -1,5 +1,16 @@
 <div class="language-container">
   <ng-container *ngFor="let language of languages">
-    <p class="language">{{ language.name }}</p>
+    <p
+      class="language"
+      [style]="
+        'background: linear-gradient(to right, var(--theme-color)' +
+        language.fill +
+        '%, var(--text-color) ' +
+        language.out +
+        '%);'
+      "
+    >
+      {{ language.name }}
+    </p>
   </ng-container>
 </div>

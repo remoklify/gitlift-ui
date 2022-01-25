@@ -4,6 +4,11 @@
   .description {
     font-size: var(--body-font-size);
     font-weight: 400;
+
+    .colored {
+      color: var(--theme-color);
+      font-weight: 600;
+    }
   }
 
   .head {
