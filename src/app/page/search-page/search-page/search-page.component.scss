@@ -23,12 +23,13 @@
     margin-top: 20px;
     width: 100%;
     .search-box {
+      @include default-border-radius();
+
       width: 100%;
-      border-radius: 15px;
       border: 2px solid var(--theme-color);
-      padding-left: 44px;
+      padding-left: 36px;
       padding-bottom: 1px;
-      padding-top: 1px;
+      padding-top: 1.5px;
       font-size: var(--body-font-size);
       height: 40px;
     }
@@ -36,7 +37,7 @@
     .search-icon {
       color: var(--theme-color);
       position: absolute;
-      margin-left: 16px;
+      margin-left: 10px;
       margin-top: 5.5px;
       font-size: var(--icon-font-size);
     }
