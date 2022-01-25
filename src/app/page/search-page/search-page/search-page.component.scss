@@ -26,10 +26,9 @@
       width: 100%;
       border-radius: 15px;
       border: 2px solid var(--theme-color);
-      height: 30px;
-      padding-left: 38px;
+      padding-left: 44px;
       padding-bottom: 1px;
-      padding-top: 2px;
+      padding-top: 1px;
       font-size: var(--body-font-size);
       height: 40px;
     }
@@ -37,8 +36,8 @@
     .search-icon {
       color: var(--theme-color);
       position: absolute;
-      margin-left: 12px;
-      margin-top: 6px;
+      margin-left: 16px;
+      margin-top: 5.5px;
       font-size: var(--icon-font-size);
     }
   }
