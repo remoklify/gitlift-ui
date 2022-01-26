@@ -1,44 +1,98 @@
+@import "../../../styles/common/common.scss";
+
 .search-page {
-  margin-top: 60px;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+  @include layout-flex-column();
+  @include align-center();
+
+  width: 40%;
+  margin-top: 10vh;
+  margin-left: 30%;
 
   .brand-logo {
     width: 200px;
     height: 200px;
   }
 
+  .title {
+    font-size: var(--header-font-size);
+    font-weight: 300;
+    color: var(--text-color);
+  }
+
   .search-container {
     margin-top: 20px;
+    width: 100%;
     .search-box {
-      width: 40vw;
-      border-radius: 15px;
-      border: 2px solid #f57f17;
-      height: 30px;
-      padding-left: 42px;
-      padding-bottom: 1px;
-      font-size: 14px;
+      @include default-border-radius();
+
+      width: 100%;
+      border: 2px solid var(--theme-color);
+      padding-left: 36px;
+      font-size: var(--body-font-size);
       height: 40px;
+      padding-top: 2px;
+      padding-bottom: 2px;
     }
 
     .search-icon {
-      color: #f57f17;
+      color: var(--theme-color);
       position: absolute;
-      margin-left: 16px;
-      margin-top: 10px;
+      margin-left: 10px;
+      margin-top: 6px;
+      font-size: var(--icon-font-size);
+    }
+  }
+
+  .footer {
+    @include layout-flex-row();
+
+    margin-top: 30px;
+
+    .developed-by {
+      a {
+        img {
+          width: 240px;
+        }
+      }
+    }
+    .powered-by {
+      padding-top: 40px;
+      a {
+        img {
+          width: 130px;
+        }
+      }
     }
   }
 }
 
 @media only screen and (max-width: 999px) {
   .search-page {
+    @include align-center();
+    width: 90%;
+    margin-left: 5%;
+
+    .title {
+      font-size: var(--body-font-size);
+      font-weight: 400;
+      color: var(--text-color);
+    }
+
     .search-container {
+      width: 100%;
       .search-box {
-        width: 94vw;
+        width: 90%;
+        font-size: var(--small-font-size);
+        padding-left: 32px;
       }
+      .search-icon {
+        margin-top: 10px;
+        font-size: var(--small-icon-font-size);
+      }
+    }
+
+    .footer {
+      @include layout-flex-column();
     }
   }
 }

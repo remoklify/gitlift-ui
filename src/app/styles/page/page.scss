@@ -1,0 +1,19 @@
+@use "../util/util";
+
+.page {
+  background: {
+    position: center center;
+    repeat: no-repeat;
+    attachment: fixed;
+    size: cover;
+    color: var(--background-color);
+  }
+
+  padding: 0 0 env(safe-area-inset-left);
+
+  & .page-content {
+    overflow: initial;
+    position: relative;
+    z-index: 2;
+  }
+}

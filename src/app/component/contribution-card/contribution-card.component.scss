@@ -1,29 +1,110 @@
+@import "../../styles/common/common.scss";
+
 .contribution-card {
-  .head {
-    .title {
-      font-size: 24px;
+  .description {
+    font-size: var(--body-font-size);
+    font-weight: 400;
+
+    .colored {
+      color: var(--theme-color);
       font-weight: 600;
     }
-    .total-contribution {
-      span {
-        font-size: 500;
-        color: #f57f17;
-      }
+  }
+
+  .head {
+    .title {
+      font-size: var(--header-font-size);
+      font-weight: 600;
     }
   }
 
   .body {
-    .primary-languages {
-      .title {
-        font-size: 20px;
-        font-weight: 600;
-      }
+    .badge {
+      height: 174px;
+      width: 172px;
+      margin-top: 10px;
     }
 
-    .languages {
-      .title {
-        font-size: 20px;
-        font-weight: 600;
+    .sub-head {
+      font-size: var(--sub-header-font-size);
+      margin-top: 25px;
+      font-weight: 600;
+    }
+
+    .contribution-details {
+      @include layout-flex-column();
+
+      p {
+        @include layout-flex-row();
+
+        fa-icon {
+          color: var(--theme-color);
+          width: 36px;
+          padding-top: 8px;
+          font-size: var(--icon-font-size);
+        }
+
+        .right {
+          @include layout-flex-column();
+
+          span {
+            font-size: var(--body-font-size);
+            font-weight: 600;
+            text-align: left;
+          }
+
+          .title {
+            color: var(--text-color);
+          }
+
+          .value {
+            color: var(--theme-color);
+          }
+        }
+      }
+
+      .total {
+        @include layout-flex-column();
+        text-align: left;
+
+        span {
+          color: var(--theme-color);
+          padding-top: 10px;
+        }
+      }
+
+      .contributions,
+      .popularity {
+        @include layout-flex-row();
+        @include default-border-radius();
+        
+        border-top: 1px solid var(--text-color);
+        padding: 1px 10px 1px 10px;
+        
+        p:not(:first-child, :nth-child(5)) {
+          margin-left: 22px;
+          border-left: 1px solid var(--header-color);
+          padding-left: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .contribution-card {
+    .body {
+      .contribution-details {
+        .contributions,
+        .popularity {
+          @include layout-flex-column();
+
+          p:not(:first-child, :nth-child(5)) {
+            margin-left: 0px;
+            padding-left: 0px;
+            border-left: 0px;
+          }
+        }
       }
     }
   }

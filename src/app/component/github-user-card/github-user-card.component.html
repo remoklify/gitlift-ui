@@ -1,5 +1,17 @@
+<div class="actions">
+  <div class="back-button" *ngIf="!loading" (click)="back()">
+    <fa-icon [icon]="faBack" class="fa-lg"></fa-icon
+    ><input type="button" value="Back" />
+  </div>
+
+  <div class="download-button" *ngIf="!loading && userFound" (click)="generateMdBadge()">
+    <fa-icon [icon]="faGithub" class="fa-lg"></fa-icon
+    ><input type="button" value="Add to your Github Profile" />
+  </div>
+</div>
+
 <div class="github-user">
-  <div class="left">
+  <div class="left" *ngIf="!loading && userFound">
     <app-core-information-card
       [info]="user.coreInformation"
     ></app-core-information-card>
@@ -16,9 +28,15 @@
       </div>
     </div>
   </div>
-  <div class="right">
+  <div id="exportable" class="right" *ngIf="!loading && userFound">
     <app-contribution-card
       [contribution]="user.contribution"
     ></app-contribution-card>
+  </div>
+  <app-loader *ngIf="loading"></app-loader>
+  <div class="user-not-found" *ngIf="!loading && !userFound">
+    <p>
+      User with name <span>{{ username }}</span> not found.
+    </p>
   </div>
 </div>

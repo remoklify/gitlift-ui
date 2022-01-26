@@ -1,34 +1,38 @@
+@import "../../styles/common/common.scss";
+
 .core-information {
-  display: flex;
-  flex-direction: column;
-  float: left;
+  @include layout-flex-column();
+  @include default-border-radius();
+  @include align-left();
+
   padding: 10px;
-  border-top: 1px solid #eeeeee;
-  border-top-right-radius: 15px;
+  border-top: 1px solid var(--text-color);
+
   .profile-image {
     img {
+      @include default-border-radius();
+
       width: 160px;
       height: 160px;
-      border-bottom-right-radius: 80px;
     }
   }
 
   .info {
     margin-top: 10px;
-    text-align: left;
+
     .name {
-      font-size: 24px;
+      font-size: var(--header-font-size);
       font-weight: 600;
     }
 
     .login {
-      font-size: 18px;
+      font-size: var(--sub-header-font-size);
       font-weight: 600;
     }
 
     .bio {
       margin-top: 10px;
-      font-size: 18px;
+      font-size: var(--body-font-size);
       font-weight: 400;
     }
   }

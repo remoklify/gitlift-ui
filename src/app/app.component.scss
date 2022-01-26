@@ -1,9 +1,76 @@
-.container {
-  width: 94vw;
-  padding: 30px;
-  align-content: center;
+@use '../app/styles/util/util';
+@use '../app/styles/page/page';
+
+.raw-content-page-layout, .form-page-layout {
+  @include util.flex-layout-column;
+
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
+}
+
+.form-page-layout {
+  & .body {
+    box-sizing: border-box;
+    padding: 25px;
+    font-size: var(--body-font-size);
+
+    & .social-login-wrapper {
+      & > * {
+        width: 100%;
+        margin: 0 0 10px;
+      }
+    }
+  }
+}
+
+.raw-content-page-layout {
+  padding: 0 0 7vh;
+
+  & .logo-wrapper {
+    padding-top: 5vh;
+  }
+}
+
+@media only screen and (max-width: 999px) {
+
+  .header, .header-filler {
+    display: none;
+  }
+
+  .raw-content-page-layout, .form-page-layout {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    min-height: 80vh;
+  }
+
+  .form-page-layout {
+    & .body {
+      width: 94vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+
+  .header, .header-filler {
+    display: block;
+  }
+
+  .raw-content-page-layout, .form-page-layout {
+    padding-left: 90px;
+    padding-right: 90px;
+    min-height: 50vh;
+  }
+
+  .raw-content-page-layout {
+    & app-information-button {
+      margin-top: 30px;
+    }
+  }
+
+  .form-page-layout {
+    & .body {
+      width: 400px;
+    }
+  }
 }

@@ -1,12 +1,16 @@
+@import "../../styles/common/common.scss";
+
 .github-user {
-  width: 94vw;
-  color: #d2cece;
+  @include align-center();
+  width: 90%;
+  color: var(--text-color);
+
   .left {
+    @include layout-flex-column();
+
     max-width: 300px;
     float: left;
     margin-left: 120px;
-    display: flex;
-    flex-direction: column;
 
     .basic-info {
       .conditional-info {
@@ -16,25 +20,76 @@
   }
 
   .right {
-    float: left;
-    text-align: left;
+    @include layout-flex-column();
+    @include align-left();
+
+    background-color: var(--bg-color);
     margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
+    max-width: 500px;
+    margin-bottom: 30px;
+  }
+
+  app-loader {
+    @include align-center();
+    position: absolute;
+  }
+
+  .user-not-found {
+    margin-top: 20vh;
+    margin-left: 10vw;
+    p {
+      font-size: var(--sub-header-font-size);
+      span {
+        color: var(--theme-color);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.actions {
+  @include layout-flex-row();
+  height: 60px;
+  background-color: var(--header-color);
+  width: 100%;
+  margin-bottom: 20px;
+  align-items: center;
+  .download-button,
+  .back-button {
+    margin-left: 30px;
+    color: var(--theme-color);
+
+    input {
+      cursor: pointer;
+      color: var(--theme-color);
+      background-color: transparent;
+      font-size: var(--body-font-size);
+      font-weight: 600;
+      height: 40px;
+      width: auto;
+      padding-right: 15px;
+      padding-left: 10px;
+      border: 0px;
+    }
   }
 }
 
 @media only screen and (max-width: 999px) {
   .github-user {
+    .left {
+      margin-left: 20px;
+    }
     .right {
-      margin-left: 122px;
+      margin-left: 20px;
     }
   }
-}
 
-@media only screen and (max-width: 600px) {
-  .github-user {
-    margin-left: -150px;
+  .actions {
+    .download-button,
+    .back-button {
+      input {
+        font-size: var(--small-font-size);
+      }
+    }
   }
 }

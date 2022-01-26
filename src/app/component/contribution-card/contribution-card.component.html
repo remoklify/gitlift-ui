@@ -1,28 +1,165 @@
-<div class="contribution-card">
+<div class="contribution-card" *ngIf="contribution">
   <div class="head">
-    <p class="title">Contributions</p>
-    <span class="description">
-      This information is prepared according to last year activity.
+    <p class="title">Contribution Metrics</p>
+    <span class="description" *ngIf="contribution.totalContributionsCount">
+      Metrics are prepared relying on last one year activity.
     </span>
-    <p class="total-contribution">
-      Total Contributions:
-      <span>{{ contribution.totalContributionsCount }}</span>
-    </p>
+    <span class="description" *ngIf="!contribution.totalContributionsCount">
+      Contribution not found for this profile according to last one year
+      activity.
+    </span>
   </div>
 
   <div class="body">
-    <div class="primary-languages">
-      <p class="title">Primary languages</p>
+    <div class="contribution-details">
+      <p class="total sub-head">
+        Contributions
+        <span>{{ contribution.totalContributionsCount }}</span>
+      </p>
+
+      <div class="contributions">
+        <p>
+          <fa-icon [icon]="faCode" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Commit</span>
+            <span class="value">{{
+              contribution.totalCommitContributions
+            }}</span>
+          </span>
+        </p>
+        <p>
+          <fa-icon [icon]="faEnvelope" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Issue</span>
+            <span class="value">{{
+              contribution.totalIssueContributions
+            }}</span>
+          </span>
+        </p>
+        <p>
+          <fa-icon [icon]="faCodeBranch" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">PR</span>
+            <span class="value">{{
+              contribution.totalPullRequestContributions
+            }}</span>
+          </span>
+        </p>
+        <p>
+          <fa-icon [icon]="faCheckDouble" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">PR Review</span>
+            <span class="value">{{
+              contribution.totalPullRequestReviewContributions
+            }}</span>
+          </span>
+        </p>
+        <p>
+          <fa-icon [icon]="faDatabase" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Repository</span>
+            <span class="value">{{
+              contribution.totalRepositoryContributions
+            }}</span>
+          </span>
+        </p>
+        <p>
+          <fa-icon [icon]="faEyeSlash" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Restricted</span>
+            <span class="value">{{
+              contribution.restrictedContributions
+            }}</span>
+          </span>
+        </p>
+      </div>
+
+      <p class="total sub-head">Contribution Badge</p>
+      <span class="description">
+        Contribution badges earned by contribution count.
+      </span>
+      <img
+        class="badge"
+        [src]="
+          './assets/badges/' +
+          getBadge(contribution.totalContributionsCount) +
+          '-badge.png'
+        "
+      />
+
+      <p class="total sub-head">
+        Popularity
+        <span>{{
+          contribution.totalStargazerCount +
+            contribution.totalForkCount +
+            contribution.totalFollowersCount
+        }}</span>
+      </p>
+
+      <div class="popularity">
+        <p>
+          <fa-icon [icon]="faStar" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Stars</span>
+            <span class="value">{{ contribution.totalStargazerCount }}</span>
+          </span>
+        </p>
+        <p>
+          <fa-icon [icon]="faProjectDiagram" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Forks</span>
+            <span class="value">{{ contribution.totalForkCount }}</span>
+          </span>
+        </p>
+        <p>
+          <fa-icon [icon]="faFire" class="fa-lg"></fa-icon>
+          <span class="right">
+            <span class="title">Followers</span>
+            <span class="value">{{ contribution.totalFollowersCount }}</span>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div
+      class="head"
+      *ngIf="
+        contribution.primaryLanguages &&
+        contribution.primaryLanguages.length > 0
+      "
+    >
+      <p class="title">Skills</p>
+      <span class="description">
+        <span class="colored">This Color</span> identifies the contribution weight by the user for the specified language.
+      </span>
+    </div>
+    <div
+      class="primary-languages"
+      *ngIf="
+        contribution.primaryLanguages &&
+        contribution.primaryLanguages.length > 0
+      "
+    >
+      <p class="sub-head">Primary languages</p>
       <app-language-card
         [languages]="contribution.primaryLanguages"
       ></app-language-card>
     </div>
 
-    <div class="languages">
-      <p class="title">Also experienced in</p>
+    <div
+      class="languages"
+      *ngIf="contribution.languages && contribution.languages.length > 0"
+    >
+      <p class="sub-head">Also experienced in</p>
       <app-language-card
         [languages]="contribution.languages"
       ></app-language-card>
     </div>
+
+    <!-- <div class="last-week-activity">
+      <p class="title">This week activity</p>
+      <app-activity-history-card
+        [activityHistory]="contribution.lastWeekEvents"
+      ></app-activity-history-card>
+    </div> -->
   </div>
 </div>

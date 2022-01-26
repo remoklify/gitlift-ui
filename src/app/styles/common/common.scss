@@ -1,0 +1,31 @@
+@mixin layout-flex {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+}
+
+@mixin layout-flex-column {
+  @include layout-flex();
+  flex-direction: column;
+}
+
+@mixin layout-flex-row {
+  @include layout-flex();
+  flex-direction: row;
+}
+
+@mixin align-center {
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@mixin align-left {
+  float: left;
+  text-align: left;
+}
+
+@mixin default-border-radius {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 80px;
+}

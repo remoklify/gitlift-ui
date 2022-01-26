@@ -1,11 +1,13 @@
+@import "../../styles/common/common.scss";
+
 .personal-information-card {
-  display: flex;
-  flex-direction: column;
-  float: left;
-  text-align: left;
+  @include layout-flex-column();
+  @include align-left();
+  @include default-border-radius();
+
   padding: 10px;
-  border-top: 1px solid #eeeeee;
-  border-top-right-radius: 15px;
+  border-top: 1px solid var(--text-color);
+
   .info {
     display: flex;
     flex-direction: row;
@@ -13,13 +15,13 @@
     .content {
       word-break: break-all;
       margin-left: 10px;
-      font-size: 16px;
+      font-size: var(--body-font-size);
       padding-top: 2px;
       font-weight: 400;
     }
 
     a {
-      color: #F57F17;
+      color: var(--theme-color);
     }
   }
 }

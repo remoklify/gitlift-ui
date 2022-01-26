@@ -1,0 +1,7 @@
+<div class="activity-history" *ngIf="activityHistory">
+  <div class="weekly-schema">
+    <app-activity-card
+      [contributionDays]="activityHistory.contributionDays"
+    ></app-activity-card>
+  </div>
+</div>

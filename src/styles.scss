@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@use "theme/theme";
+@import "~ngx-toastr/toastr";
+
+:root {
+  background-color: var(--bg-color);
+  margin: 0px;
+  font-family: var(--default-font);
+}
