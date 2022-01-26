@@ -15,7 +15,6 @@ import { Language } from 'src/app/model/language/language.model';
 })
 export class GithubUserCardComponent implements OnInit {
   @Input() username: string = '';
-  @Input() onlyMetrics?: boolean = false;
 
   public user: GithubUser = {} as GithubUser;
   public userFound: boolean = false;

@@ -4,14 +4,14 @@
     ><input type="button" value="Back" />
   </div>
 
-  <div class="download-button" *ngIf="!loading" (click)="generateMdBadge()">
+  <div class="download-button" *ngIf="!loading && userFound" (click)="generateMdBadge()">
     <fa-icon [icon]="faGithub" class="fa-lg"></fa-icon
     ><input type="button" value="Add to your Github Profile" />
   </div>
 </div>
 
 <div class="github-user">
-  <div class="left" *ngIf="!loading && userFound && !onlyMetrics">
+  <div class="left" *ngIf="!loading && userFound">
     <app-core-information-card
       [info]="user.coreInformation"
     ></app-core-information-card>
