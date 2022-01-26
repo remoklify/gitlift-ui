@@ -24,13 +24,13 @@ Gitlift is an open source project that generates contributors' profile with curr
 
 Deploy this template to Heroku
 
-[![Deploy](https://img.shields.io/badge/Deploy_to-Heroku-7056bf.svg?style=for-the-badge&logo=heroku)](https://heroku.com/deploy?template=https://github.com/remoklify/gitlift-business-logic)
+[![Deploy](https://img.shields.io/badge/Deploy_to-Heroku-7056bf.svg?style=for-the-badge&logo=heroku)](https://heroku.com/deploy?template=https://github.com/remoklify/gitlift-ui)
 
 ### 2. GitHub Template
 
 Use this repository as a Template
 
-[![GitHubTemplate](https://img.shields.io/badge/GitHub-Template-24292e.svg?style=for-the-badge&logo=github)](https://github.com/remoklify/gitlift-business-logic/generate)
+[![GitHubTemplate](https://img.shields.io/badge/GitHub-Template-24292e.svg?style=for-the-badge&logo=github)](https://github.com/remoklify/gitlift-ui/generate)
 
 ## Installations
 
@@ -68,7 +68,7 @@ ng serve
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/fatihturker"><img src="https://avatars1.githubusercontent.com/u/2202179?s=460&u=261b1129e7106c067783cb022ab9999aad833bdc&v=4" width="100px;" alt=""/><br /><sub><b>Fatih Turker</b></sub></a><br /><a href="https://github.com/remoklify/gitlift-business-logic/issues/created_by/fatihturker" title="Answering Questions">💬</a> <a href="https://github.com/remoklify/gitlift-business-logic/commits?author=fatihturker" title="Documentation">📖</a> <a href="https://github.com/remoklify/gitlift-business-logic/pulls?q=is%3Apr+reviewed-by%3Afatihturker" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/fatihturker"><img src="https://avatars1.githubusercontent.com/u/2202179?s=460&u=261b1129e7106c067783cb022ab9999aad833bdc&v=4" width="100px;" alt=""/><br /><sub><b>Fatih Turker</b></sub></a><br /><a href="https://github.com/remoklify/gitlift-ui/issues/created_by/fatihturker" title="Answering Questions">💬</a> <a href="https://github.com/remoklify/gitlift-ui/commits?author=fatihturker" title="Documentation">📖</a> <a href="https://github.com/remoklify/gitlift-ui/pulls?q=is%3Apr+reviewed-by%3Afatihturker" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
