@@ -29,6 +29,7 @@
   }
 
   app-loader {
+    @include align-center();
     position: absolute;
   }
 
