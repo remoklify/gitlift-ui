@@ -82,4 +82,13 @@
       margin-left: 20px;
     }
   }
+
+  .actions {
+    .download-button,
+    .back-button {
+      input {
+        font-size: var(--small-font-size);
+      }
+    }
+  }
 }
