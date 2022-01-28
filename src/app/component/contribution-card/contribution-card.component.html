@@ -84,7 +84,7 @@
         class="badge"
         [src]="
           './assets/badges/' +
-          getBadge(contribution.totalContributionsCount) +
+          getBadge(contribution.totalContributionsCount, contribution.totalStargazerCount + contribution.totalForkCount + contribution.totalFollowersCount) +
           '-badge.png'
         "
       />

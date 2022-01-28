@@ -79,7 +79,10 @@ export class GithubUserCardComponent implements OnInit {
 
   generateMdBadge = () => {
     const badge = this.commonUtil.getBadge(
-      this.user.contribution.totalContributionsCount
+      this.user.contribution.totalContributionsCount,
+      this.user.contribution.totalStargazerCount +
+        this.user.contribution.totalFollowersCount +
+        this.user.contribution.totalForkCount
     );
 
     const mdBadge = MD_BADGE.replace(
