@@ -1,21 +1,32 @@
 import { Injectable } from '@angular/core';
+import { GITLIFT_BADGES } from '../app.constant';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommonUtil {
   getBadge = (contributionCount: number) => {
-    if (contributionCount >= 4000) {
-      return 'master';
-    } else if (contributionCount >= 2000) {
-      return 'expert';
-    } else if (contributionCount >= 1000) {
-      return 'productive';
-    } else if (contributionCount >= 500) {
-      return 'determined';
-    } else {
-      return 'beginner';
+    const sorted = GITLIFT_BADGES.sort((a: any, b: any) => {
+      if (a.minCount > b.minCount) {
+        return -1;
+      }
+
+      if (a.minCount < b.minCount) {
+        return 1;
+      }
+
+      return 0;
+    });
+    
+    for(let i = 0; i < sorted.length; i++) {
+      const badge = sorted[i];
+
+      if (contributionCount > badge.minCount) {
+        return badge.name;
+      }
     }
+
+    return '';
   };
 
   toCapitalize = (str: string) => {

@@ -1,0 +1,6 @@
+@import "../../styles/common/common.scss";
+
+.badges-page {
+  @include layout-flex-row();
+  @include align-center();
+}

@@ -18,6 +18,8 @@ import { ActivityCardComponent } from './component/activity-card/activity-card.c
 import { LoaderComponent } from './component/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { BadgeInfoCardComponent } from './component/badge-info-card/badge-info-card.component';
+import { BadgesPageComponent } from './page/badges-page/badges-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ToastrModule } from 'ngx-toastr';
     ActivityHistoryCardComponent,
     ActivityCardComponent,
     LoaderComponent,
+    BadgeInfoCardComponent,
+    BadgesPageComponent,
   ],
   imports: [
     BrowserModule,

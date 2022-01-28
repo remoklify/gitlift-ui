@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   faCheckDouble,
   faCode,
@@ -31,11 +32,15 @@ export class ContributionCardComponent implements OnInit {
   faDatabase = faDatabase;
   faEyeSlash = faEyeSlash;
 
-  constructor(private commonUtil: CommonUtil) {}
+  constructor(private commonUtil: CommonUtil, private router: Router) {}
 
   ngOnInit(): void {}
 
   getBadge = (contributionCount: number) => {
     return this.commonUtil.getBadge(contributionCount);
+  };
+
+  getBadgesUrl = () => {
+    return this.router.createUrlTree(['/badges']);
   };
 }

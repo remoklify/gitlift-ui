@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { BadgesPageComponent } from './page/badges-page/badges-page.component';
 import { SearchPageComponent } from './page/search-page/search-page/search-page.component';
 import { UserPageComponent } from './page/user-page/user-page/user-page.component';
 
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'user/' + ':username',
         component: UserPageComponent,
+      },
+      {
+        path: 'badges',
+        component: BadgesPageComponent,
       },
     ],
   },

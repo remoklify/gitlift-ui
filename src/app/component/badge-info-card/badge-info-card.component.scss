@@ -1,0 +1,18 @@
+.badge {
+  color: var(--text-color);
+
+  .title {
+    text-transform: capitalize;
+    font-size: var(--sub-header-font-size);
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: var(--body-font-size);
+    font-weight: 600;
+  }
+
+  img {
+    width: 200px;
+  }
+}
