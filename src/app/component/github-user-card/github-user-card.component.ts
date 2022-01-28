@@ -7,6 +7,7 @@ import { MD_BADGE } from 'src/app/app.constant';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Language } from 'src/app/model/language/language.model';
+import { CommonUtil } from 'src/app/util/common.util';
 
 @Component({
   selector: 'app-github-user-card',
@@ -26,7 +27,8 @@ export class GithubUserCardComponent implements OnInit {
   constructor(
     private githubService: GithubService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private commonUtil: CommonUtil
   ) {}
 
   ngOnInit(): void {
@@ -38,8 +40,12 @@ export class GithubUserCardComponent implements OnInit {
             if (githubUser && githubUser.contribution) {
               this.userFound = true;
               this.user = githubUser;
-              const length = githubUser.contribution.languages.length >= 3 ? 3 : githubUser.contribution.languages.length;
-              this.user.contribution.primaryLanguages = this.user.contribution.languages.slice(0, length);
+              const length =
+                githubUser.contribution.languages.length >= 3
+                  ? 3
+                  : githubUser.contribution.languages.length;
+              this.user.contribution.primaryLanguages =
+                this.user.contribution.languages.slice(0, length);
               this.user.contribution.languages =
                 githubUser.contribution.languages.filter(
                   (l: Language) =>
@@ -72,10 +78,15 @@ export class GithubUserCardComponent implements OnInit {
   };
 
   generateMdBadge = () => {
+    const badge = this.commonUtil.getBadge(
+      this.user.contribution.totalContributionsCount
+    );
+
     const mdBadge = MD_BADGE.replace(
       /\${username}/g,
       this.username.toLowerCase()
-    );
+    ).replace(/\${badge}/g, this.commonUtil.toCapitalize(badge));
+
     navigator.clipboard.writeText(mdBadge);
     this.toastr.success(
       'Successfully copied to clipboard. Now you can add the badge to your Github Profile.',

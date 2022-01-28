@@ -11,6 +11,7 @@ import {
   faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import { Contribution } from 'src/app/model/contribution/contribution.model';
+import { CommonUtil } from 'src/app/util/common.util';
 
 @Component({
   selector: 'app-contribution-card',
@@ -28,23 +29,13 @@ export class ContributionCardComponent implements OnInit {
   faProjectDiagram = faProjectDiagram;
   faFire = faFire;
   faDatabase = faDatabase;
-  faEyeSlash = faEyeSlash; 
+  faEyeSlash = faEyeSlash;
 
-  constructor() {}
+  constructor(private commonUtil: CommonUtil) {}
 
   ngOnInit(): void {}
 
   getBadge = (contributionCount: number) => {
-    if (contributionCount >= 4000) {
-      return 'master';
-    } else if (contributionCount >= 2000) {
-      return 'expert';
-    } else if (contributionCount >= 1000) {
-      return 'productive';
-    } else if (contributionCount >= 500) {
-      return 'determined';
-    } else {
-      return 'beginner';
-    }
+    return this.commonUtil.getBadge(contributionCount);
   };
 }
