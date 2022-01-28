@@ -1,5 +1,8 @@
 <div class="badge">
   <p class="title">{{ badge.name }}</p>
-  <p class="description"></p>
+  <p class="description">
+    If you have <span>{{ badge.minCount }}</span> or more contribution from
+    last year, you will be eligible to earn <span>{{ badge.name }}</span> badge.
+  </p>
   <img class="badge" [src]="'./assets/badges/' + badge.name + '-badge.png'" />
 </div>

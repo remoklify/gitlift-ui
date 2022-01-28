@@ -1,6 +1,7 @@
 .badge {
   color: var(--text-color);
-
+  padding: 20px;
+  width: 300px;
   .title {
     text-transform: capitalize;
     font-size: var(--sub-header-font-size);
@@ -9,7 +10,13 @@
 
   .description {
     font-size: var(--body-font-size);
-    font-weight: 600;
+    font-weight: 400;
+
+    span {
+      color: var(--theme-color);
+      font-weight: 600;
+      text-transform: capitalize;
+    }
   }
 
   img {

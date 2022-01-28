@@ -21,7 +21,7 @@ export class CommonUtil {
     for(let i = 0; i < sorted.length; i++) {
       const badge = sorted[i];
 
-      if (contributionCount > badge.minCount) {
+      if (contributionCount >= badge.minCount) {
         return badge.name;
       }
     }
