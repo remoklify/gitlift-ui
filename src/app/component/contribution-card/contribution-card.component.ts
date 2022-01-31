@@ -36,8 +36,8 @@ export class ContributionCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getBadge = (contributionCount: number) => {
-    return this.commonUtil.getBadge(contributionCount);
+  getBadge = (contributionCount: number, popularity: number) => {
+    return this.commonUtil.getBadge(contributionCount, popularity);
   };
 
   getBadgesUrl = () => {

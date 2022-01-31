@@ -76,15 +76,14 @@
 
       <p class="total sub-head">Contribution Badge</p>
       <span class="description">
-        Contribution badges can be earned by contribution count.
         <a class="colored" [href]="getBadgesUrl()" target="_blank">Click here</a> for more
-        information about badges.
+        information about Gitlift Badges.
       </span>
       <img
         class="badge"
         [src]="
           './assets/badges/' +
-          getBadge(contribution.totalContributionsCount) +
+          getBadge(contribution.totalContributionsCount, contribution.totalStargazerCount + contribution.totalForkCount + contribution.totalFollowersCount) +
           '-badge.png'
         "
       />
