@@ -15,4 +15,5 @@ export interface Contribution {
   lastWeekEvents: ActivityHistory;
   languages: Language[];
   primaryLanguages: Language[];
+  hash: string;
 }
