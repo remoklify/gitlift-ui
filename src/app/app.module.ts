@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { BadgeInfoCardComponent } from './component/badge-info-card/badge-info-card.component';
 import { BadgesPageComponent } from './page/badges-page/badges-page.component';
+import { EarnedCardComponent } from './component/earned-card/earned-card.component';
+import { EarnedPageComponent } from './page/earned-page/earned-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { BadgesPageComponent } from './page/badges-page/badges-page.component';
     LoaderComponent,
     BadgeInfoCardComponent,
     BadgesPageComponent,
+    EarnedCardComponent,
+    EarnedPageComponent,
   ],
   imports: [
     BrowserModule,

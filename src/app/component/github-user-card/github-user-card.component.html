@@ -8,6 +8,11 @@
     <fa-icon [icon]="faGithub" class="fa-lg"></fa-icon
     ><input type="button" value="Add to your Github Profile" />
   </div>
+
+  <div class="share-button" *ngIf="!loading && userFound" (click)="shareBadge()">
+    <fa-icon [icon]="faLinkedin" class="fa-lg"></fa-icon
+    ><input type="button" value="Generate QR for Current Profile" />
+  </div>
 </div>
 
 <div class="github-user">

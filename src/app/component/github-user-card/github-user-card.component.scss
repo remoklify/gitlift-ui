@@ -55,7 +55,8 @@
   margin-bottom: 20px;
   align-items: center;
   .download-button,
-  .back-button {
+  .back-button,
+  .share-button {
     margin-left: 30px;
     color: var(--theme-color);
 
@@ -85,8 +86,10 @@
   }
 
   .actions {
+    height: auto;
     .download-button,
-    .back-button {
+    .back-button,
+    .share-button {
       input {
         font-size: var(--small-font-size);
       }

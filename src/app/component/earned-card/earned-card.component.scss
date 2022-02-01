@@ -1,0 +1,22 @@
+@import "../../styles/common/common.scss";
+
+.earned-card {
+  @include layout-flex-column();
+  @include align-center();
+  
+  .info {
+    font-size: var(--sub-header-font-size);
+    color: var(--text-color);
+    margin-top: 25px;
+    font-weight: 600;
+    span {
+      color: var(--theme-color);
+    }
+  }
+
+  .badge {
+    height: 174px;
+    width: 172px;
+    margin-top: 10px;
+  }
+}

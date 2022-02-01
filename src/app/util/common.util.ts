@@ -5,7 +5,7 @@ import { GITLIFT_BADGES } from '../app.constant';
   providedIn: 'root',
 })
 export class CommonUtil {
-  getBadge = (contributionCount: number, popularity: number) => {
+  getBadge = (totalPoint: number) => {
     const sorted = GITLIFT_BADGES.sort((a: any, b: any) => {
       if (a.minCount > b.minCount) {
         return -1;
@@ -17,11 +17,11 @@ export class CommonUtil {
 
       return 0;
     });
-    
-    for(let i = 0; i < sorted.length; i++) {
+
+    for (let i = 0; i < sorted.length; i++) {
       const badge = sorted[i];
 
-      if (contributionCount + popularity >= badge.minCount) {
+      if (totalPoint >= badge.minCount) {
         return badge.name;
       }
     }

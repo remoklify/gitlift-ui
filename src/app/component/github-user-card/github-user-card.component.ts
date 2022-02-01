@@ -2,12 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { MD_BADGE } from 'src/app/app.constant';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Language } from 'src/app/model/language/language.model';
 import { CommonUtil } from 'src/app/util/common.util';
+import * as QRCode from 'qrcode';
 
 @Component({
   selector: 'app-github-user-card',
@@ -23,6 +24,7 @@ export class GithubUserCardComponent implements OnInit {
 
   faBack = faChevronLeft;
   faGithub = faGithub;
+  faLinkedin = faLinkedin;
 
   constructor(
     private githubService: GithubService,
@@ -79,8 +81,8 @@ export class GithubUserCardComponent implements OnInit {
 
   generateMdBadge = () => {
     const badge = this.commonUtil.getBadge(
-      this.user.contribution.totalContributionsCount,
-      this.user.contribution.totalStargazerCount +
+      this.user.contribution.totalContributionsCount +
+        this.user.contribution.totalStargazerCount +
         this.user.contribution.totalFollowersCount +
         this.user.contribution.totalForkCount
     );
@@ -95,5 +97,18 @@ export class GithubUserCardComponent implements OnInit {
       'Successfully copied to clipboard. Now you can add the badge to your Github Profile.',
       'Gitlift Badge is generated!'
     );
+  };
+
+  shareBadge = () => {
+    const uri = 'https://gitlift.com/earned/' + this.user.contribution.hash;
+    const toastr = this.toastr;
+    QRCode.toDataURL(uri, function (err, url) {
+      if (err) return console.log('error occured');
+      navigator.clipboard.writeText(url);
+      toastr.success(
+        'Successfully copied to clipboard. Now you can share the QR on your professional profiles (e.g. Linkedin).',
+        'QR is generated!'
+      );
+    });
   };
 }

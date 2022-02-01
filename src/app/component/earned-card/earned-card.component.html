@@ -1,0 +1,13 @@
+<div class="earned-card" *ngIf="earned && earned.totalPoint">
+  <p class="info">
+    Github user
+    <span>{{ earned.login }}</span> earned this batch on
+    <span>{{ earned.created.toLocaleString() }}</span> with total contribution
+    and popularity <span>{{ earned.totalPoint }}</span
+    >.
+  </p>
+  <img
+    class="badge"
+    [src]="'./assets/badges/' + getBadge(earned.totalPoint) + '-badge.png'"
+  />
+</div>

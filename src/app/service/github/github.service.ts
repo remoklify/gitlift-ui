@@ -16,4 +16,13 @@ export class GithubService {
       }
     );
   };
+
+  decryptHash = async (hash: string) => {
+    return this.http.get<any>(
+      `${environment.api.business_logic.uri}/user/decrypt`,
+      {
+        params: { hash },
+      }
+    );
+  };
 }
