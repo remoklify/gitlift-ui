@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faQrcode } from '@fortawesome/free-solid-svg-icons';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -25,6 +25,7 @@ export class GithubUserCardComponent implements OnInit {
   faBack = faChevronLeft;
   faGithub = faGithub;
   faLinkedin = faLinkedin;
+  faQrCode = faQrcode;
 
   constructor(
     private githubService: GithubService,
