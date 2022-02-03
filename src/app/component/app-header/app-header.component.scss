@@ -1,0 +1,22 @@
+@import "../../styles/common/common.scss";
+
+.app-header {
+  @include layout-flex-row();
+  @include align-left();
+
+  margin-bottom: 20px;
+  background-color: var(--header-color);
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+
+  .brand-logo {
+    height: 60px;
+  }
+
+  .brand-name {
+    color: var(--theme-color);
+    font-size: var(--sub-header-font-size);
+    font-weight: 600;
+  }
+}

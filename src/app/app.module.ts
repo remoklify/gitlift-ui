@@ -22,6 +22,7 @@ import { BadgeInfoCardComponent } from './component/badge-info-card/badge-info-c
 import { BadgesPageComponent } from './page/badges-page/badges-page.component';
 import { EarnedCardComponent } from './component/earned-card/earned-card.component';
 import { EarnedPageComponent } from './page/earned-page/earned-page.component';
+import { AppHeaderComponent } from './component/app-header/app-header.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { EarnedPageComponent } from './page/earned-page/earned-page.component';
     BadgesPageComponent,
     EarnedCardComponent,
     EarnedPageComponent,
+    AppHeaderComponent,
   ],
   imports: [
     BrowserModule,
