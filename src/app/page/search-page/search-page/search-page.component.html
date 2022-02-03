@@ -8,7 +8,8 @@
   <div class="search-container">
     <fa-icon [icon]="faSearch" class="search-icon"></fa-icon
     ><input
-      type="search"
+      type="text"
+      name="search-box"
       class="search-box"
       placeholder="Type Github username: e.g fatihturker"
       (keydown.enter)="search($event)"

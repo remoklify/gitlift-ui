@@ -27,18 +27,17 @@
 
       width: 100%;
       border: 2px solid var(--theme-color);
-      padding-left: 36px;
+      padding-left: 38px;
       font-size: var(--body-font-size);
       height: 40px;
       padding-top: 2px;
-      padding-bottom: 2px;
     }
 
     .search-icon {
       color: var(--theme-color);
       position: absolute;
       margin-left: 10px;
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: var(--icon-font-size);
     }
   }
@@ -83,10 +82,10 @@
       .search-box {
         width: 90%;
         font-size: var(--small-font-size);
-        padding-left: 32px;
+        padding-left: 34px;
       }
       .search-icon {
-        margin-top: 10px;
+        margin-top: 11px;
         font-size: var(--small-icon-font-size);
       }
     }
