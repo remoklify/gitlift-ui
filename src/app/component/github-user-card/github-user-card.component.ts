@@ -126,6 +126,6 @@ export class GithubUserCardComponent implements OnInit {
       .replace(/\${cert_url}/g, uri)
       .replace(/\${cert_id}/g, certId);
 
-    window.open(linkedin_url, '_blank');
+      window.location.href = linkedin_url;
   };
 }
