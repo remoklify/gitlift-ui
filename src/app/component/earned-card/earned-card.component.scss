@@ -3,20 +3,53 @@
 .earned-card {
   @include layout-flex-column();
   @include align-center();
-  
-  .info {
-    font-size: var(--sub-header-font-size);
-    color: var(--text-color);
-    margin-top: 25px;
-    font-weight: 600;
+
+  .certificate {
+    @include align-left();
+
+    max-width: 300px;
+    width: 300px;
+
+    fa-icon {
+      color: var(--theme-color);
+    }
+
     span {
+      color: var(--theme-color);
+      padding-left: 5px;
+      font-size: var(--sub-header-font-size);
+      font-weight: 600;
+    }
+  }
+
+  .info {
+    @include layout-flex-column();
+    @include align-left();
+
+    max-width: 300px;
+    width: 300px;
+
+    font-size: var(--body-font-size);
+    font-weight: 600;
+
+    .title {
+      color: var(--text-color);
+    }
+
+    .value {
       color: var(--theme-color);
     }
   }
 
   .badge {
-    height: 174px;
-    width: 172px;
-    margin-top: 10px;
+    @include align-left();
+
+    max-width: 300px;
+    width: 300px;
+
+    img {
+      height: 174px;
+      width: 172px;
+    }
   }
 }

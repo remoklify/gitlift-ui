@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faCertificate } from '@fortawesome/free-solid-svg-icons';
 import { EarnedBadge } from 'src/app/model/earned-badge/earned-badge.model';
 import { GithubService } from 'src/app/service/github/github.service';
 import { CommonUtil } from 'src/app/util/common.util';
@@ -11,6 +12,10 @@ import { CommonUtil } from 'src/app/util/common.util';
 export class EarnedCardComponent implements OnInit {
   @Input() hash: string = '';
   earned: EarnedBadge = {} as EarnedBadge;
+
+  EXPIRY: number = 1;
+
+  faCertificate = faCertificate;
 
   constructor(
     private githubService: GithubService,
@@ -25,6 +30,16 @@ export class EarnedCardComponent implements OnInit {
           data.subscribe((decrypted: EarnedBadge) => {
             this.earned = decrypted;
             this.earned.created = new Date(this.earned.created);
+            this.earned.expiry = this.getNYearsLater(
+              this.earned.created,
+              this.EXPIRY
+            );
+            this.earned.expiry.setHours(
+              this.earned.created.getHours(),
+              this.earned.created.getMinutes(),
+              this.earned.created.getSeconds(),
+              this.earned.created.getMilliseconds()
+            );
           });
         })
         .catch((e) => {
@@ -32,6 +47,13 @@ export class EarnedCardComponent implements OnInit {
         });
     }
   }
+
+  getNYearsLater = (d: Date, n: number) => {
+    var year = d.getFullYear();
+    var month = d.getMonth();
+    var day = d.getDate();
+    return new Date(year + n, month, day);
+  };
 
   getBadge = (totalPoint: number) => {
     return this.commonUtil.getBadge(totalPoint);

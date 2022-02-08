@@ -1,13 +1,36 @@
 <div class="earned-card" *ngIf="earned && earned.totalPoint">
-  <p class="info">
-    Github user
-    <span>{{ earned.login }}</span> earned this batch on
-    <span>{{ earned.created.toLocaleString() }}</span> with total contribution
-    and popularity <span>{{ earned.totalPoint }}</span
-    >.
+  <p class="certificate">
+    <fa-icon [icon]="faCertificate" class="fa-lg"></fa-icon>
+    <span>Gitlift Certificate</span>
   </p>
-  <img
-    class="badge"
-    [src]="'./assets/badges/' + getBadge(earned.totalPoint) + '-badge.png'"
-  />
+  <p class="info">
+    <span class="title">Username</span>
+    <a class="value" [href]="'https://gitlift.com/user/' + earned.login">{{
+      earned.login
+    }}</a>
+  </p>
+
+  <p class="info">
+    <span class="title">Certificate Date</span>
+    <span class="value">{{ earned.created.toString() }}</span>
+  </p>
+
+  <p class="info">
+    <span class="title">Expiry</span>
+    <span class="value">{{ earned.expiry.toString() }}</span>
+  </p>
+
+  <p class="info">
+    <span class="title">Total Point Earned</span>
+    <span class="value">{{ earned.totalPoint }}</span>
+  </p>
+
+  <p class="info">
+    <span class="title">Earned Badge</span>
+  </p>
+  <p class="badge">
+    <img
+      [src]="'./assets/badges/' + getBadge(earned.totalPoint) + '-badge.png'"
+    />
+  </p>
 </div>
