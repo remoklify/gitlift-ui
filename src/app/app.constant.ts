@@ -23,3 +23,6 @@ export const GITLIFT_BADGES = [
     minCount: 4000,
   },
 ];
+
+export const LINKEDIN_CERTIFICATE =
+  'https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Gitlift ${badge} Badge&organizationId=78824564&issueYear=${issue_year}&issueMonth=${issue_month}&expirationYear=${expiration_year}&expirationMonth=${expiration_month}&certUrl=${cert_url}&certId=${cert_id}';

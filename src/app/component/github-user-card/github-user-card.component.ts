@@ -1,14 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faChevronLeft, faQrcode } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { GithubUser } from 'src/app/model/github-user/github-user.model';
 import { GithubService } from 'src/app/service/github/github.service';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { MD_BADGE } from 'src/app/app.constant';
+import { LINKEDIN_CERTIFICATE, MD_BADGE } from 'src/app/app.constant';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Language } from 'src/app/model/language/language.model';
 import { CommonUtil } from 'src/app/util/common.util';
-import * as QRCode from 'qrcode';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-github-user-card',
@@ -25,7 +25,6 @@ export class GithubUserCardComponent implements OnInit {
   faBack = faChevronLeft;
   faGithub = faGithub;
   faLinkedin = faLinkedin;
-  faQrCode = faQrcode;
 
   constructor(
     private githubService: GithubService,
@@ -102,14 +101,31 @@ export class GithubUserCardComponent implements OnInit {
 
   shareBadge = () => {
     const uri = 'https://gitlift.com/earned/' + this.user.contribution.hash;
-    const toastr = this.toastr;
-    QRCode.toDataURL(uri, function (err, url) {
-      if (err) return console.log('error occured');
-      navigator.clipboard.writeText(url);
-      toastr.success(
-        'Successfully copied to clipboard. Now you can share the QR on your professional profiles (e.g. Linkedin).',
-        'QR is generated!'
-      );
-    });
+
+    var currentTime = new Date();
+    var month = currentTime.getMonth() + 1;
+    var year = currentTime.getFullYear();
+
+    const badge = this.commonUtil.getBadge(
+      this.user.contribution.totalContributionsCount +
+        this.user.contribution.totalStargazerCount +
+        this.user.contribution.totalFollowersCount +
+        this.user.contribution.totalForkCount
+    );
+
+    const certId = uuidv4();
+
+    const linkedin_url = LINKEDIN_CERTIFICATE.replace(
+      /\${issue_year}/g,
+      year.toString()
+    )
+      .replace(/\${expiration_year}/g, (year + 1).toString())
+      .replace(/\${issue_month}/g, month.toString())
+      .replace(/\${expiration_month}/g, month.toString())
+      .replace(/\${badge}/g, this.commonUtil.toCapitalize(badge))
+      .replace(/\${cert_url}/g, uri)
+      .replace(/\${cert_id}/g, certId);
+
+    window.open(linkedin_url, '_blank');
   };
 }
