@@ -1,6 +1,6 @@
 <div class="earned-card">
   <div class="card" *ngIf="!loading">
-    <div class="valid" *ngIf="earned && earned.login">
+    <div class="valid" *ngIf="certificateFound">
       <p class="certificate">
         <fa-icon [icon]="faCertificate" class="fa-lg"></fa-icon>
         <span>Gitlift Certificate</span>
@@ -38,7 +38,7 @@
         />
       </p>
     </div>
-    <div class="invalid" *ngIf="!(earned && earned.login)">
+    <div class="invalid" *ngIf="!certificateFound">
       <fa-icon [icon]="faExclamationTriangle" class="fa-lg"></fa-icon>
       <p>Invalid Certificate</p>
     </div>

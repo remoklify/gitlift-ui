@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faCertificate, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCertificate,
+  faExclamationTriangle,
+} from '@fortawesome/free-solid-svg-icons';
 import { EarnedBadge } from 'src/app/model/earned-badge/earned-badge.model';
 import { GithubService } from 'src/app/service/github/github.service';
 import { CommonUtil } from 'src/app/util/common.util';
@@ -13,6 +16,7 @@ export class EarnedCardComponent implements OnInit {
   @Input() hash: string = '';
   earned: EarnedBadge = {} as EarnedBadge;
   loading: boolean = true;
+  certificateFound: boolean = false;
 
   EXPIRY: number = 1;
 
@@ -24,24 +28,29 @@ export class EarnedCardComponent implements OnInit {
     private commonUtil: CommonUtil
   ) {}
 
-  ngOnInit(): void {   
+  ngOnInit(): void {
     if (this.hash.length > 0) {
       this.githubService
         .decryptHash(this.hash)
         .then((data) => {
           data.subscribe((decrypted: EarnedBadge) => {
             this.earned = decrypted;
-            this.earned.created = new Date(this.earned.created);
-            this.earned.expiry = this.getNYearsLater(
-              this.earned.created,
-              this.EXPIRY
-            );
-            this.earned.expiry.setHours(
-              this.earned.created.getHours(),
-              this.earned.created.getMinutes(),
-              this.earned.created.getSeconds(),
-              this.earned.created.getMilliseconds()
-            );
+            if (this.earned && this.earned.login) {
+              this.certificateFound = true;
+              this.earned.created = new Date(this.earned.created);
+              this.earned.expiry = this.getNYearsLater(
+                this.earned.created,
+                this.EXPIRY
+              );
+              this.earned.expiry.setHours(
+                this.earned.created.getHours(),
+                this.earned.created.getMinutes(),
+                this.earned.created.getSeconds(),
+                this.earned.created.getMilliseconds()
+              );
+            } else {
+              this.certificateFound = false;
+            }
             this.loading = false;
           });
         })
