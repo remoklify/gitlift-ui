@@ -24,9 +24,7 @@ export class EarnedCardComponent implements OnInit {
     private commonUtil: CommonUtil
   ) {}
 
-  ngOnInit(): void {
-    this.loading = true;
-    
+  ngOnInit(): void {   
     if (this.hash.length > 0) {
       this.githubService
         .decryptHash(this.hash)
@@ -51,8 +49,6 @@ export class EarnedCardComponent implements OnInit {
           console.log(e);
         });
     }
-
-    this.loading = false;
   }
 
   getNYearsLater = (d: Date, n: number) => {
