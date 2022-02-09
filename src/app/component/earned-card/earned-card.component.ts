@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { faCertificate, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { EarnedBadge } from 'src/app/model/earned-badge/earned-badge.model';
 import { GithubService } from 'src/app/service/github/github.service';
 import { CommonUtil } from 'src/app/util/common.util';
@@ -12,10 +12,12 @@ import { CommonUtil } from 'src/app/util/common.util';
 export class EarnedCardComponent implements OnInit {
   @Input() hash: string = '';
   earned: EarnedBadge = {} as EarnedBadge;
+  loading: boolean = true;
 
   EXPIRY: number = 1;
 
   faCertificate = faCertificate;
+  faExclamationTriangle = faExclamationTriangle;
 
   constructor(
     private githubService: GithubService,
@@ -23,6 +25,8 @@ export class EarnedCardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loading = true;
+    
     if (this.hash.length > 0) {
       this.githubService
         .decryptHash(this.hash)
@@ -40,12 +44,15 @@ export class EarnedCardComponent implements OnInit {
               this.earned.created.getSeconds(),
               this.earned.created.getMilliseconds()
             );
+            this.loading = false;
           });
         })
         .catch((e) => {
           console.log(e);
         });
     }
+
+    this.loading = false;
   }
 
   getNYearsLater = (d: Date, n: number) => {

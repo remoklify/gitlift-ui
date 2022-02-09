@@ -1,36 +1,47 @@
-<div class="earned-card" *ngIf="earned && earned.totalPoint">
-  <p class="certificate">
-    <fa-icon [icon]="faCertificate" class="fa-lg"></fa-icon>
-    <span>Gitlift Certificate</span>
-  </p>
-  <p class="info">
-    <span class="title">Username</span>
-    <a class="value" [href]="'https://gitlift.com/user/' + earned.login">{{
-      earned.login
-    }}</a>
-  </p>
+<div class="earned-card">
+  <div class="card" *ngIf="!loading">
+    <div class="valid" *ngIf="earned && earned.login">
+      <p class="certificate">
+        <fa-icon [icon]="faCertificate" class="fa-lg"></fa-icon>
+        <span>Gitlift Certificate</span>
+      </p>
+      <p class="info">
+        <span class="title">Username</span>
+        <a class="value" [href]="'https://gitlift.com/user/' + earned.login">{{
+          earned.login
+        }}</a>
+      </p>
 
-  <p class="info">
-    <span class="title">Certificate Date</span>
-    <span class="value">{{ earned.created.toDateString() }}</span>
-  </p>
+      <p class="info">
+        <span class="title">Certificate Date</span>
+        <span class="value">{{ earned.created.toDateString() }}</span>
+      </p>
 
-  <p class="info">
-    <span class="title">Certificate Expiry</span>
-    <span class="value">{{ earned.expiry.toDateString() }}</span>
-  </p>
+      <p class="info">
+        <span class="title">Certificate Expiry</span>
+        <span class="value">{{ earned.expiry.toDateString() }}</span>
+      </p>
 
-  <p class="info">
-    <span class="title">Total Point Earned</span>
-    <span class="value">{{ earned.totalPoint }}</span>
-  </p>
+      <p class="info">
+        <span class="title">Total Point Earned</span>
+        <span class="value">{{ earned.totalPoint }}</span>
+      </p>
 
-  <p class="info">
-    <span class="title">Earned Badge</span>
-  </p>
-  <p class="badge">
-    <img
-      [src]="'./assets/badges/' + getBadge(earned.totalPoint) + '-badge.png'"
-    />
-  </p>
+      <p class="info">
+        <span class="title">Earned Badge</span>
+      </p>
+      <p class="badge">
+        <img
+          [src]="
+            './assets/badges/' + getBadge(earned.totalPoint) + '-badge.png'
+          "
+        />
+      </p>
+    </div>
+    <div class="invalid" *ngIf="!(earned && earned.login)">
+      <fa-icon [icon]="faExclamationTriangle" class="fa-lg"></fa-icon>
+      <p>Invalid Certificate</p>
+    </div>
+  </div>
+  <div class="loader"><app-loader *ngIf="loading"></app-loader></div>
 </div>
