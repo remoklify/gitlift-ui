@@ -2,4 +2,6 @@
 
 .earned-page {
   @include layout-flex-column();
+  
+  width: 94vw;
 }
