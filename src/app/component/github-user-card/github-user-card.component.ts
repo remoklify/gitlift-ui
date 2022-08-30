@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Language } from 'src/app/model/language/language.model';
 import { CommonUtil } from 'src/app/util/common.util';
-import { Md5 } from 'ts-md5/dist/md5';
+import { Md5 } from 'ts-md5';
 
 @Component({
   selector: 'app-github-user-card',
