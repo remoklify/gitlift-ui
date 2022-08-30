@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    business_logic: { uri: 'https://gitlift-business-logic.herokuapp.com' },
+    business_logic: { uri: 'https://gitlift-business-logic.onrender.com' },
   },
 };
 
