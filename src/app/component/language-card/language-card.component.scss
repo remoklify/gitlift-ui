@@ -5,6 +5,7 @@
 
   .language {
     @include default-border-radius();
+    @include default-border-radius-for-box();
 
     padding: 11px 26px 13px 13px;
     margin-left: 10px;

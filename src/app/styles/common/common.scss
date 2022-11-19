@@ -27,5 +27,8 @@
 
 @mixin default-border-radius {
   border-top-right-radius: 15px;
+}
+
+@mixin default-border-radius-for-box {
   border-bottom-right-radius: 80px;
 }

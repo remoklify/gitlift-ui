@@ -24,7 +24,8 @@
     width: 100%;
     .search-box {
       @include default-border-radius();
-
+      @include default-border-radius-for-box();
+      
       width: 100%;
       border: 2px solid var(--theme-color);
       padding-left: 38px;
@@ -37,7 +38,7 @@
       color: var(--theme-color);
       position: absolute;
       margin-left: 10px;
-      margin-top: 8px;
+      margin-top: 0.65em;
       font-size: var(--icon-font-size);
     }
   }
